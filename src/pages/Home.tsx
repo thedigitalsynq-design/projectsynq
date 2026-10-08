@@ -44,7 +44,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigateMatrix }) => {
   return (
     <div className="relative min-h-screen bg-background text-synq-text selection:bg-accent-cyan/20 selection:text-accent-cyan overflow-x-hidden font-sans">
       {/* Sticky Top Navbar */}
-      <Navbar onStartSynqClick={scrollToEngage} onNavigateMatrix={onNavigateMatrix} currentView="home" />
+      <Navbar currentRoute="overview" onNavigate={(route) => { window.location.hash = `#${route}`; }} />
 
       <main>
         {/* 08. Hero Section */}
