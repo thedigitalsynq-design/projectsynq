@@ -34,10 +34,10 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
-        display: ['"DM Serif Display"', 'Georgia', 'serif'],
-        sans: ['"DM Serif Display"', 'Georgia', 'serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        serif: ['"Space Grotesk"', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'sans-serif'],
+        mono: ['"Space Grotesk"', 'monospace'],
       },
       animation: {
         'pulse-subtle': 'pulseSubtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
