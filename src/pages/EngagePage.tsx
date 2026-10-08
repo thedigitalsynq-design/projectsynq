@@ -13,12 +13,12 @@ export const EngagePage: React.FC<EngagePageProps> = ({ onNavigate }) => {
       {/* Chapter Page Header */}
       <section className="relative pb-16 border-b border-white/[0.06] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
+          <div className="inline-flex items-center gap-2 clean-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <Send className="w-3.5 h-3.5 text-accent-cyan" />
             <span>Chapter 07 / Terminal</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight">
             Terminal:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
               72-Hour Rapid Diagnostic Intake
@@ -30,15 +30,15 @@ export const EngagePage: React.FC<EngagePageProps> = ({ onNavigate }) => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mt-6 text-xs font-mono text-synq-dim">
-            <span className="flex items-center gap-1.5 apple-pill px-3 py-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-accent-lime" />
+            <span className="flex items-center gap-1.5 clean-pill px-3 py-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-accent-cyan" />
               <span>Institutional NDA Protected</span>
             </span>
-            <span className="flex items-center gap-1.5 apple-pill px-3 py-1">
+            <span className="flex items-center gap-1.5 clean-pill px-3 py-1">
               <Clock className="w-3.5 h-3.5 text-accent-cyan" />
               <span>72-Hour Rapid Diagnostic SLA</span>
             </span>
-            <span className="flex items-center gap-1.5 apple-pill px-3 py-1">
+            <span className="flex items-center gap-1.5 clean-pill px-3 py-1">
               <span>0% Upfront Financial Exposure</span>
             </span>
           </div>

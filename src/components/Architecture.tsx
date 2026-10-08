@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Brain, Cpu, RefreshCw, ChevronRight, ArrowDown, Sparkles, Layers, ShieldCheck, Zap } from 'lucide-react';
+import { Brain, Cpu, RefreshCw, Layers, ShieldCheck } from 'lucide-react';
 
 export const Architecture: React.FC = () => {
   const [selectedLayer, setSelectedLayer] = useState<number>(1);
@@ -60,14 +60,11 @@ export const Architecture: React.FC = () => {
   const ActiveIcon = active.icon;
 
   return (
-    <section id="architecture" className="relative py-28 md:py-36 bg-background border-t border-white/[0.06] overflow-hidden">
-      {/* Cupertino Spotlight Glow */}
-      <div className="absolute top-1/3 left-1/3 w-[600px] h-[400px] bg-accent-cyan/[0.04] rounded-full blur-[150px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="architecture" className="relative py-20 md:py-28 bg-[#08090C] border-t border-white/[0.07]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-synq-dim tracking-wider uppercase mb-5">
+        <div className="max-w-3xl mb-14">
+          <div className="inline-flex items-center gap-2 clean-pill px-3 py-1 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-4">
             <Layers className="w-3.5 h-3.5 text-accent-cyan" />
             <span>04 / System Architecture</span>
           </div>
@@ -76,21 +73,21 @@ export const Architecture: React.FC = () => {
             From fragmented nodes to functioning systems.
           </h2>
 
-          <p className="mt-5 text-base sm:text-xl text-zinc-300 leading-relaxed">
+          <p className="mt-5 text-base sm:text-xl text-zinc-300 leading-relaxed font-normal">
             ProjectSynq functions as a unified three-layer architecture. Each layer reinforces the others, translating cognitive diagnostics into concrete, repeatable operations.
           </p>
         </div>
 
-        {/* Apple Segmented Switcher Pill Bar */}
-        <div className="flex flex-wrap p-1.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-2xl max-w-2xl mb-10 gap-1">
+        {/* Clean Segmented Switcher Pill Bar */}
+        <div className="flex flex-wrap p-1 rounded-full bg-white/[0.03] border border-white/[0.08] max-w-xl mb-8 gap-1">
           {layers.map((l) => (
             <button
               key={l.num}
               onClick={() => setSelectedLayer(l.num)}
-              className={`flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+              className={`flex-1 py-2 px-3 rounded-full text-xs font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
                 selectedLayer === l.num
-                  ? 'bg-white/[0.12] text-white shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/[0.1]'
-                  : 'text-synq-muted hover:text-white hover:bg-white/[0.02]'
+                  ? 'bg-white/[0.12] text-white border border-white/[0.12] shadow-sm'
+                  : 'text-zinc-400 hover:text-white hover:bg-white/[0.03]'
               }`}
             >
               <span className="font-mono text-xs text-accent-cyan">0{l.num}</span>
@@ -99,13 +96,10 @@ export const Architecture: React.FC = () => {
           ))}
         </div>
 
-        {/* Apple Bento Grid for Active Layer Architecture */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-          {/* Bento Card 1: Core Layer Overview (Spans 8 columns) */}
-          <div className="lg:col-span-8 apple-bento-card p-8 sm:p-12 relative overflow-hidden flex flex-col justify-between">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-accent-cyan/[0.05] rounded-full blur-3xl pointer-events-none" />
-
+        {/* Clean Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          {/* Card 1: Core Layer Overview (Spans 8 cols) */}
+          <div className="lg:col-span-8 clean-card p-8 sm:p-10 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
@@ -122,31 +116,31 @@ export const Architecture: React.FC = () => {
                   </div>
                 </div>
 
-                <span className="apple-pill px-3 py-1 text-xs font-mono text-synq-dim">
-                  ARCHITECTURE L0{active.num}
+                <span className="clean-pill px-3 py-1 text-xs font-mono">
+                  L0{active.num}
                 </span>
               </div>
 
-              <p className="text-base text-zinc-300 font-medium mb-3">
+              <p className="text-sm sm:text-base text-zinc-300 font-medium mb-2">
                 {active.subtitle}
               </p>
-              <p className="text-sm text-synq-muted leading-relaxed max-w-2xl mb-8">
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-2xl mb-6">
                 {active.desc}
               </p>
 
               {/* Invariant Sequence Bar */}
-              <div className="p-4 rounded-2xl bg-black/40 border border-white/[0.06] mb-8">
-                <span className="font-mono text-[10px] text-synq-dim uppercase tracking-wider block mb-3">
+              <div className="p-3.5 rounded-xl bg-black/40 border border-white/[0.06] mb-6">
+                <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider block mb-2">
                   Invariant Sequence Pathway
                 </span>
                 <div className="flex flex-wrap items-center gap-2">
                   {active.sequence.map((step, i) => (
                     <React.Fragment key={step}>
-                      <span className="apple-pill px-3 py-1 font-mono text-xs font-bold text-accent-cyan bg-accent-cyan/[0.08] border-accent-cyan/20">
+                      <span className="clean-pill px-2.5 py-1 font-mono text-xs font-bold text-accent-cyan bg-white/[0.04] border-accent-cyan/20">
                         {step}
                       </span>
                       {i < active.sequence.length - 1 && (
-                        <span className="text-synq-dim text-xs font-mono">→</span>
+                        <span className="text-zinc-600 text-xs font-mono">→</span>
                       )}
                     </React.Fragment>
                   ))}
@@ -155,13 +149,13 @@ export const Architecture: React.FC = () => {
             </div>
 
             {/* Atomic Breakdown Mini Bento Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-white/[0.06]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-5 border-t border-white/[0.06]">
               {active.details.map((d, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+                <div key={idx} className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
                   <span className="font-mono text-xs font-bold text-accent-cyan block mb-1">
                     {d.label}
                   </span>
-                  <p className="text-xs text-synq-text leading-snug">
+                  <p className="text-xs text-zinc-400 leading-snug">
                     {d.text}
                   </p>
                 </div>
@@ -169,38 +163,37 @@ export const Architecture: React.FC = () => {
             </div>
           </div>
 
-          {/* Bento Card 2: Stack Integrity & Cross-Layer Synthesis (Spans 4 columns) */}
-          <div className="lg:col-span-4 apple-bento-card p-8 sm:p-10 flex flex-col justify-between bg-gradient-to-br from-surface-100/90 to-background-deep">
+          {/* Card 2: Stack Integrity (Spans 4 cols) */}
+          <div className="lg:col-span-4 clean-card p-8 sm:p-10 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 apple-pill px-3 py-1 text-xs font-mono text-accent-lime mb-6">
-                <ShieldCheck className="w-3.5 h-3.5 text-accent-lime" />
+              <div className="flex items-center gap-2 clean-pill px-3 py-1 text-xs font-mono text-accent-cyan mb-6">
+                <ShieldCheck className="w-3.5 h-3.5 text-accent-cyan" />
                 <span>COHERENT OPERATING RAIL</span>
               </div>
 
-              <h4 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-4">
-                Why Individual Tools Fail Ecosystems.
+              <h4 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight mb-3">
+                Why Isolated Tools Fail.
               </h4>
-              <p className="text-xs sm:text-sm text-synq-muted leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
                 Consultancies offer Layer 1 (reports) without mechanisms. Software platforms offer Layer 3 (dashboards) without human trust or dispute bridges. ProjectSynq binds all three into a single execution protocol.
               </p>
             </div>
 
-            <div className="space-y-3 pt-6 border-t border-white/[0.06] text-xs font-mono">
+            <div className="space-y-2 pt-5 border-t border-white/[0.06] text-xs font-mono">
               <div className="flex justify-between items-center p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <span className="text-synq-dim">L1: Diagnostic Rigor</span>
+                <span className="text-zinc-500">L1: Diagnostic Rigor</span>
                 <span className="text-accent-cyan">Active</span>
               </div>
               <div className="flex justify-between items-center p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <span className="text-synq-dim">L2: Mechanism Protocol</span>
+                <span className="text-zinc-500">L2: Mechanism Protocol</span>
                 <span className="text-accent-cyan">Active</span>
               </div>
               <div className="flex justify-between items-center p-3 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                <span className="text-synq-dim">L3: Ground Cadence</span>
-                <span className="text-accent-lime">Synchronized</span>
+                <span className="text-zinc-500">L3: Ground Cadence</span>
+                <span className="text-accent-cyan">Synchronized</span>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

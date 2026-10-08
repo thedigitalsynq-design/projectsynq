@@ -23,7 +23,7 @@ export default {
         accent: {
           cyan: '#00F0FF',
           blue: '#3B82F6',
-          lime: '#D4FF32',
+          lime: '#00F0FF',
           glow: 'rgba(0, 240, 255, 0.15)',
         },
         synq: {
@@ -34,9 +34,10 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Google Sans Flex"', '"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+        display: ['"DM Serif Display"', 'Georgia', 'serif'],
+        sans: ['"DM Serif Display"', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
-        display: ['"Google Sans Flex"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
       },
       animation: {
         'pulse-subtle': 'pulseSubtle 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',

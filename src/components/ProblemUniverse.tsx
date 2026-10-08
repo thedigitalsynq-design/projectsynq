@@ -118,11 +118,11 @@ export const ProblemUniverse: React.FC = () => {
               </div>
 
               {/* Case Study Example */}
-              <div className="p-4 rounded-xl bg-surface-200/70 border-l-2 border-accent-lime space-y-1">
-                <div className="text-[10px] font-mono uppercase tracking-wider text-accent-lime">
+              <div className="p-4 rounded-xl bg-white/[0.02] border-l-2 border-accent-cyan space-y-1">
+                <div className="text-[10px] font-mono uppercase tracking-wider text-accent-cyan">
                   Demonstrated Intervention
                 </div>
-                <p className="text-xs text-synq-text leading-relaxed italic">
+                <p className="text-xs text-zinc-300 leading-relaxed italic">
                   "{activeProblem.realWorldExample}"
                 </p>
               </div>
@@ -131,17 +131,17 @@ export const ProblemUniverse: React.FC = () => {
             {/* Right: Common Friction vs Synq Interventions */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Common Friction */}
-              <div className="p-5 rounded-xl bg-rose-950/20 border border-rose-500/20 space-y-3">
-                <div className="flex items-center gap-2 pb-2 border-b border-rose-500/20 text-rose-400">
-                  <AlertOctagon className="w-4 h-4" />
+              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-white/[0.08] text-zinc-400">
+                  <AlertOctagon className="w-4 h-4 text-zinc-400" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">
                     Common Friction
                   </span>
                 </div>
                 <div className="space-y-2.5">
                   {activeProblem.commonFriction.map((f, i) => (
-                    <div key={i} className="text-xs text-rose-200/80 flex items-start gap-2 leading-relaxed">
-                      <span className="text-rose-400 font-bold">•</span>
+                    <div key={i} className="text-xs text-zinc-400 flex items-start gap-2 leading-relaxed">
+                      <span className="text-zinc-500 font-bold">•</span>
                       <span>{f}</span>
                     </div>
                   ))}
@@ -149,16 +149,16 @@ export const ProblemUniverse: React.FC = () => {
               </div>
 
               {/* Potential Synq Intervention */}
-              <div className="p-5 rounded-xl bg-sky-950/20 border border-accent-cyan/30 space-y-3">
-                <div className="flex items-center gap-2 pb-2 border-b border-accent-cyan/30 text-accent-cyan">
-                  <CheckCircle2 className="w-4 h-4" />
+              <div className="p-5 rounded-2xl bg-white/[0.03] border border-accent-cyan/30 space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-accent-cyan/20 text-accent-cyan">
+                  <CheckCircle2 className="w-4 h-4 text-accent-cyan" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">
                     ProjectSynq Intervention
                   </span>
                 </div>
                 <div className="space-y-2.5">
                   {activeProblem.synqInterventions.map((intv, i) => (
-                    <div key={i} className="text-xs text-synq-text flex items-start gap-2 leading-relaxed">
+                    <div key={i} className="text-xs text-zinc-200 flex items-start gap-2 leading-relaxed">
                       <span className="text-accent-cyan font-bold">•</span>
                       <span>{intv}</span>
                     </div>

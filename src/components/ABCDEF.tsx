@@ -64,14 +64,14 @@ export const ABCDEF: React.FC = () => {
             {/* Stage 7: RECYCLE Return Node */}
             <div
               onClick={() => setSelectedLetter('A')}
-              className="col-span-2 sm:col-span-3 p-4 rounded-2xl border border-accent-lime/30 bg-accent-lime/[0.04] hover:bg-accent-lime/[0.08] transition-all cursor-pointer flex items-center justify-between"
+              className="col-span-2 sm:col-span-3 p-4 rounded-2xl border border-accent-cyan/30 bg-accent-cyan/[0.04] hover:bg-accent-cyan/[0.08] transition-all cursor-pointer flex items-center justify-between"
             >
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-accent-lime/20 border border-accent-lime/50 flex items-center justify-center text-accent-lime">
+                <div className="w-8 h-8 rounded-lg bg-accent-cyan/20 border border-accent-cyan/50 flex items-center justify-center text-accent-cyan">
                   <RefreshCw className="w-4 h-4 animate-spin duration-3000" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono font-bold text-accent-lime uppercase tracking-wider">
+                  <div className="text-xs font-mono font-bold text-accent-cyan uppercase tracking-wider">
                     RECYCLE → RETURN TO ASSESS
                   </div>
                   <div className="text-xs text-synq-muted">
@@ -79,7 +79,7 @@ export const ABCDEF: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <span className="text-xs font-mono text-accent-lime hidden sm:inline">CYCLE RESET →</span>
+              <span className="text-xs font-mono text-accent-cyan hidden sm:inline">CYCLE RESET →</span>
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export const ABCDEF: React.FC = () => {
                 </div>
                 {selectedStage.actionList.map((act, i) => (
                   <div key={i} className="flex items-center gap-2.5 p-2 rounded-lg bg-surface-100/60 text-xs text-synq-text">
-                    <Check className="w-3.5 h-3.5 text-accent-lime flex-shrink-0" />
+                    <Check className="w-3.5 h-3.5 text-accent-cyan flex-shrink-0" />
                     <span>{act}</span>
                   </div>
                 ))}

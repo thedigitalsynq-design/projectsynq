@@ -139,9 +139,9 @@ export const UseCases: React.FC = () => {
             </div>
 
             {/* Step 5: OUTCOME */}
-            <div className="p-4 sm:p-5 rounded-xl bg-accent-lime/[0.06] border border-accent-lime/30 flex flex-col md:flex-row md:items-start gap-4">
+            <div className="p-4 sm:p-5 rounded-xl bg-accent-cyan/[0.06] border border-accent-cyan/30 flex flex-col md:flex-row md:items-start gap-4">
               <div className="md:w-36 flex-shrink-0">
-                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-accent-lime/20 text-accent-lime border border-accent-lime/40 uppercase tracking-wider">
+                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-accent-cyan/20 text-accent-cyan border border-accent-cyan/40 uppercase tracking-wider">
                   05. Outcome
                 </span>
               </div>

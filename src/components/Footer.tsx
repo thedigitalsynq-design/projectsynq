@@ -139,7 +139,7 @@ export const Footer: React.FC<FooterProps> = ({ onStartSynq }) => {
             © {new Date().getFullYear()} ProjectSynq. All rights reserved. Inter-Node Intelligence™.
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-lime" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan shadow-[0_0_8px_#00F0FF]" />
             <span>Systems Online • Zero Friction</span>
           </div>
         </div>

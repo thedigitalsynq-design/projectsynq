@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ChevronRight, Compass } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 
 interface PageNavigationBannerProps {
   currentPageNumber: string;
@@ -7,8 +7,9 @@ interface PageNavigationBannerProps {
   nextRouteHash: string;
   nextPageNumber: string;
   nextPageTitle: string;
-  nextPageTeaser: string;
-  onNavigate: (hash: string) => void;
+  nextPageTeaser?: string;
+  nextPageDescription?: string;
+  onNavigate?: (hash: string) => void;
 }
 
 export const PageNavigationBanner: React.FC<PageNavigationBannerProps> = ({
@@ -18,33 +19,43 @@ export const PageNavigationBanner: React.FC<PageNavigationBannerProps> = ({
   nextPageNumber,
   nextPageTitle,
   nextPageTeaser,
+  nextPageDescription,
   onNavigate
 }) => {
+  const teaser = nextPageTeaser || nextPageDescription || 'Proceed to the next chapter of the ProjectSynq operational architecture.';
+  const handleNavigate = () => {
+    if (onNavigate) {
+      onNavigate(nextRouteHash);
+    } else {
+      window.location.hash = nextRouteHash;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
   return (
-    <section className="relative py-16 bg-gradient-to-b from-transparent to-surface-100/30 border-t border-white/[0.06] overflow-hidden">
+    <section className="relative py-16 border-t border-white/[0.07] bg-[#08090C]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="apple-bento-card p-8 sm:p-12 relative overflow-hidden bg-gradient-to-r from-surface-100/90 via-surface-100/60 to-background-deep border-white/[0.08] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="clean-card p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-synq-dim mb-3">
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-500 mb-3">
               <span>Chapter {currentPageNumber}: {currentPageTitle}</span>
-              <ChevronRight className="w-3 h-3 text-synq-dim" />
-              <span className="text-accent-cyan font-semibold">Next Progression</span>
+              <ChevronRight className="w-3 h-3 text-zinc-600" />
+              <span className="text-accent-cyan font-semibold">Next Chapter</span>
             </div>
 
             <span className="font-mono text-xs uppercase tracking-wider text-accent-cyan font-semibold block mb-1">
               Chapter {nextPageNumber}
             </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               {nextPageTitle}
             </h3>
-            <p className="mt-2 text-sm text-synq-muted max-w-xl leading-relaxed">
-              {nextPageTeaser}
+            <p className="mt-2 text-sm text-zinc-400 max-w-xl leading-relaxed">
+              {teaser}
             </p>
           </div>
 
           <button
-            onClick={() => onNavigate(nextRouteHash)}
-            className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl font-semibold text-sm sm:text-base text-background-deep bg-accent-cyan hover:bg-[#33F3FF] transition-all shadow-[0_0_30px_rgba(0,240,255,0.25)] hover:shadow-[0_0_40px_rgba(0,240,255,0.4)] active:scale-95 flex-shrink-0"
+            onClick={handleNavigate}
+            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full font-bold text-xs sm:text-sm text-background-deep bg-gradient-to-r from-accent-cyan to-[#2EE4FF] hover:shadow-[0_0_25px_rgba(0,240,255,0.35)] transition-all active:scale-95 flex-shrink-0"
           >
             <span>Proceed to Chapter {nextPageNumber}</span>
             <ArrowRight className="w-4 h-4 text-background-deep" />

@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
             <span className="relative inline-flex items-center text-accent-cyan">
               q
               <span className="absolute -bottom-0.5 right-0 w-2.5 h-1.5 border-b-2 border-r-2 border-accent-cyan rounded-br-full opacity-90 group-hover:scale-110 transition-transform" />
-              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-accent-lime opacity-80" />
+              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-accent-cyan opacity-80" />
             </span>
           </span>
           <span className="hidden xl:inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-synq-dim px-2.5 py-1 rounded-full border border-white/[0.08] bg-white/[0.03]">
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
 
                 {/* 17 Nodes Badge on Atlas */}
                 {chapter.id === 'matrix' && (
-                  <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-accent-lime/15 text-accent-lime border border-accent-lime/30 leading-none">
+                  <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30 leading-none">
                     17N
                   </span>
                 )}
@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
             onClick={() => handleSelectRoute('engage')}
             className={`group relative inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-tight transition-all duration-300 active:scale-95 whitespace-nowrap ${
               currentRoute === 'engage'
-                ? 'bg-accent-lime text-background-deep shadow-[0_0_30px_rgba(204,255,0,0.4)]'
+                ? 'bg-accent-cyan text-background-deep shadow-[0_0_30px_rgba(0,240,255,0.4)]'
                 : 'bg-gradient-to-r from-accent-cyan to-[#2EE4FF] text-background-deep shadow-[0_0_25px_rgba(0,240,255,0.3)] hover:shadow-[0_0_35px_rgba(0,240,255,0.5)] hover:scale-[1.02]'
             }`}
           >
@@ -151,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
                   <span>{chapter.label}</span>
                 </div>
                 {chapter.id === 'matrix' && (
-                  <span className="text-xs font-mono text-accent-lime font-bold">17 NODES →</span>
+                  <span className="text-xs font-mono text-accent-cyan font-bold">17 NODES →</span>
                 )}
               </button>
             ))}

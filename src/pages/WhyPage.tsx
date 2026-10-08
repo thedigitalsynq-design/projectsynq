@@ -17,12 +17,12 @@ export const WhyPage: React.FC<WhyPageProps> = ({ onNavigate, onStartSynq }) => 
       {/* Chapter Page Header */}
       <section className="relative pb-16 border-b border-white/[0.06] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
+          <div className="inline-flex items-center gap-2 clean-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <AlertTriangle className="w-3.5 h-3.5 text-accent-cyan" />
             <span>Chapter 02 / The Friction Layer</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight">
             Friction:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
               The Invisible Space Between Nodes

@@ -98,28 +98,28 @@ export const ProblemInsight: React.FC = () => {
                   <p className="text-[11px] text-synq-muted mt-2 leading-relaxed">
                     Diagnosing Gaps • Engineering Bridges • Flow Orchestration • Repeatable Systems
                   </p>
-                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-mono text-accent-lime">
-                    <CheckCircle2 className="w-3 h-3" />
+                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-mono text-accent-cyan">
+                    <CheckCircle2 className="w-3 h-3 text-accent-cyan" />
                     <span>Friction Neutralized into Flow</span>
                   </div>
                 </div>
               ) : (
                 /* The Default Friction Layer */
-                <div className="w-full h-full p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 text-center relative animate-in fade-in duration-500">
-                  <div className="w-8 h-8 rounded-full bg-rose-500/10 border border-rose-500/40 flex items-center justify-center mx-auto mb-2 text-rose-400">
+                <div className="w-full h-full p-5 rounded-xl bg-white/[0.02] border border-white/[0.1] text-center relative animate-in fade-in duration-500">
+                  <div className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.1] flex items-center justify-center mx-auto mb-2 text-zinc-400">
                     <ShieldAlert className="w-4 h-4" />
                   </div>
-                  <div className="text-xs font-mono text-rose-400 uppercase tracking-widest font-semibold">
+                  <div className="text-xs font-mono text-zinc-400 uppercase tracking-widest font-semibold">
                     THE FRICTION LAYER
                   </div>
                   <div className="text-sm font-bold text-white mt-1">
                     Structural Impedance
                   </div>
-                  <p className="text-[11px] text-synq-muted mt-2 leading-relaxed">
+                  <p className="text-[11px] text-zinc-400 mt-2 leading-relaxed">
                     Distrust • Unaligned Incentives • Defensive Paperwork • Broken Handoffs • Stalled Momentum
                   </p>
-                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-mono text-rose-400">
-                    <AlertTriangle className="w-3 h-3" />
+                  <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-mono text-zinc-500">
+                    <AlertTriangle className="w-3 h-3 text-zinc-500" />
                     <span>Transactions Stall in the Void</span>
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export const ProblemInsight: React.FC = () => {
             <div className="lg:col-span-4 p-5 rounded-xl bg-surface-100/70 border border-white/5 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-synq-dim uppercase tracking-wider">Node Cluster B</span>
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-sky-400">Capital & Screens</span>
+                <span className="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-accent-cyan">Capital & Screens</span>
               </div>
               <h4 className="text-base font-semibold text-white">Commercial & Distribution Nodes</h4>
               <p className="text-xs text-synq-muted leading-relaxed">

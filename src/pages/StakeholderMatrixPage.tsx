@@ -11,6 +11,7 @@ import {
   SEVEN_BIG_PICTURE_LAYERS,
 } from '../data/matrixData';
 import { OmniStakeholderConnector } from '../components/OmniStakeholderConnector';
+import { PageNavigationBanner } from '../components/PageNavigationBanner';
 import {
   Search,
   Filter,
@@ -62,75 +63,42 @@ export const StakeholderMatrixPage: React.FC<StakeholderMatrixPageProps> = ({
 
   return (
     <div className="relative min-h-screen bg-background text-synq-text selection:bg-accent-cyan/20 selection:text-accent-cyan overflow-x-hidden font-sans pb-24">
-      {/* Top Banner Navigation */}
-      <header className="sticky top-0 z-50 py-4 bg-background-deep/90 backdrop-blur-xl border-b border-surface-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={onBackToHome}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-100 hover:bg-surface-200 border border-white/5 text-xs font-mono text-synq-muted hover:text-white transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to Overview</span>
-            </button>
-
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-bold tracking-tight text-white flex items-baseline">
-                ProjectSyn<span className="text-accent-cyan">q</span>
-              </span>
-              <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-surface-200 text-accent-cyan border border-accent-cyan/20">
-                ECOSYSTEM MATRIX
-              </span>
-            </div>
-          </div>
-
-          <button
-            onClick={onStartSynq}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-background-deep bg-accent-cyan hover:bg-[#33F3FF] transition-all shadow-md active:scale-95"
-          >
-            <span>Start a Synq</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 border-b border-surface-border bg-gradient-to-b from-surface-100/30 to-background overflow-hidden">
-        <div className="absolute top-10 right-1/4 w-[500px] h-[350px] bg-accent-cyan/[0.04] rounded-full blur-[140px] pointer-events-none" />
-
+      {/* Standardized Chapter 05 Page Header */}
+      <section className="relative pt-32 pb-16 border-b border-white/[0.07] bg-[#08090C] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-100 border border-white/5 font-mono text-xs text-synq-dim uppercase tracking-wider mb-4 w-fit">
-            Master Diagnostic Atlas
+          <div className="inline-flex items-center gap-2 clean-pill px-3 py-1 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
+            <Compass className="w-3.5 h-3.5 text-accent-cyan" />
+            <span>Chapter 05 / The Diagnostic Atlas</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Indian Entertainment Ecosystem:{' '}
+          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight">
+            Atlas:{' '}
             <span className="block text-gradient-cyan mt-1">
-              Stakeholder × Problem Category Matrix
+              The 17-Stakeholder Diagnostic Matrix
             </span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg text-synq-muted leading-relaxed max-w-4xl">
+          <p className="mt-4 text-base sm:text-xl text-zinc-400 leading-relaxed max-w-4xl">
             A granular systems analysis treating entertainment across its entire value chain: <strong>film, OTT, television, music, creator economy, live entertainment, theatre, gaming, animation/VFX, sports entertainment, and advertising</strong>.
           </p>
 
-          {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-white/5 font-mono text-xs">
-            <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5">
-              <span className="text-synq-dim block">Ecosystem Architecture</span>
-              <span className="text-base font-bold text-white mt-0.5 block">12 Interconnected Layers</span>
+          {/* Clean Unified Metrics Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-white/[0.06] font-mono text-xs">
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-zinc-500 block">Ecosystem Architecture</span>
+              <span className="text-base font-bold text-white mt-0.5 block">12 Master Layers</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5">
-              <span className="text-synq-dim block">Taxonomy Coverage</span>
-              <span className="text-base font-bold text-accent-cyan mt-0.5 block">25 Master Problem Sets</span>
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-zinc-500 block">Taxonomy Coverage</span>
+              <span className="text-base font-bold text-accent-cyan mt-0.5 block">25 Problem Sets</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5">
-              <span className="text-synq-dim block">Strategic Heat Matrix</span>
-              <span className="text-base font-bold text-amber-400 mt-0.5 block">17 Core Stakeholders</span>
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-zinc-500 block">Diagnostic Heat Matrix</span>
+              <span className="text-base font-bold text-white mt-0.5 block">17 Core Nodes</span>
             </div>
-            <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5">
-              <span className="text-synq-dim block">B2B Software & Rail Moats</span>
-              <span className="text-base font-bold text-accent-lime mt-0.5 block">15 Ranked Opportunities</span>
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-zinc-500 block">Ecosystem Whitespaces</span>
+              <span className="text-base font-bold text-accent-cyan mt-0.5 block">15 Opportunities</span>
             </div>
           </div>
         </div>
@@ -726,37 +694,17 @@ export const StakeholderMatrixPage: React.FC<StakeholderMatrixPageProps> = ({
 
       </main>
 
-      {/* Bottom CTA Terminal */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-16 border-t border-surface-border">
-        <div className="rounded-3xl border border-accent-cyan/30 bg-gradient-to-r from-surface-100/90 to-background-card p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
-          <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-mono text-accent-lime uppercase tracking-widest font-semibold">
-              Ready to Bridge Your Ecosystem Nodes?
-            </span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold text-white">
-              Identify the friction. Deploy the bridge.
-            </h3>
-            <p className="text-xs sm:text-sm text-synq-muted leading-relaxed">
-              Whether you are an institutional PE fund underwriting slate financing, an indie producer stuck in talent attachments, or a label managing catalogs, ProjectSynq operates between your counterparties.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
-            <button
-              onClick={onStartSynq}
-              className="px-8 py-4 rounded-xl font-semibold text-sm sm:text-base text-background-deep bg-accent-cyan hover:bg-[#33F3FF] transition-all shadow-[0_0_30px_rgba(0,240,255,0.3)] active:scale-95"
-            >
-              Start a Synq
-            </button>
-            <button
-              onClick={onBackToHome}
-              className="px-6 py-4 rounded-xl font-semibold text-sm sm:text-base text-white bg-surface-200 hover:bg-surface-100 border border-white/10 transition-all"
-            >
-              Back to Overview
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* Chapter 05 -> Chapter 06 Navigation Banner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <PageNavigationBanner
+          currentPageNumber="05"
+          currentPageTitle="Atlas"
+          nextRouteHash="#value"
+          nextPageNumber="06"
+          nextPageTitle="Economics"
+          nextPageDescription="Explore the three-tier value creation mechanism, uncaptured yield capture, and risk-aligned commercial models."
+        />
+      </div>
     </div>
   );
 };

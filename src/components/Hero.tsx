@@ -28,12 +28,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreModel, onStartSynq, onExplo
             <span className="text-xs font-mono font-medium tracking-wide text-synq-muted">
               CATEGORY: <span className="text-accent-cyan uppercase font-semibold">INTER-NODE ORCHESTRATION</span>
             </span>
-            <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-surface-200 text-accent-lime">
+            <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-surface-200 text-accent-cyan">
               17 NODES CONNECTED
             </span>
           </div>
 
-          <div className="inline-flex items-center gap-2 apple-pill px-3 py-1 font-mono text-xs text-accent-cyan bg-accent-cyan/[0.08] border-accent-cyan/20">
+          <div className="inline-flex items-center gap-2 clean-pill px-3 py-1 font-mono text-xs text-accent-cyan bg-accent-cyan/[0.08] border-accent-cyan/20">
             <Sparkles className="w-3 h-3 text-accent-cyan" />
             <span>CONNECT THE DOTS • LEVERAGE EVERY SILO</span>
           </div>
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreModel, onStartSynq, onExplo
 
             {/* Core statement chip */}
             <div className="w-full sm:w-auto mt-2 sm:mt-0 sm:ml-2 text-xs font-mono text-synq-dim flex items-center justify-center sm:justify-start gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-lime" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan shadow-[0_0_8px_#00F0FF]" />
               <span>We don't own the nodes. We make them work in sync.</span>
             </div>
           </div>

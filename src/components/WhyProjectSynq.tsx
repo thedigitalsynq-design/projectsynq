@@ -44,7 +44,7 @@ export const WhyProjectSynq: React.FC = () => {
               </div>
 
               <div className="pt-4 mt-6 border-t border-white/5 flex items-center gap-2 text-[11px] font-mono text-synq-dim">
-                <CheckCircle2 className="w-3.5 h-3.5 text-accent-lime" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-accent-cyan" />
                 <span>Foundational Trait</span>
               </div>
             </div>

@@ -120,7 +120,7 @@ export const Trust: React.FC = () => {
         {/* Visual Callout: Trust Strengthens Network Connections */}
         <div className="p-8 md:p-10 rounded-2xl bg-gradient-to-r from-surface-100/80 to-surface-200/40 border border-accent-cyan/30 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
-            <span className="text-xs font-mono text-accent-lime uppercase tracking-widest font-semibold">
+            <span className="text-xs font-mono text-accent-cyan uppercase tracking-widest font-semibold">
               The Operational Law of Ecosystems
             </span>
             <h4 className="text-xl sm:text-2xl font-bold text-white">
@@ -137,7 +137,7 @@ export const Trust: React.FC = () => {
               <span>Auditable Escrow</span>
             </div>
             <div className="px-4 py-2 rounded-xl bg-background-deep border border-white/10 text-center">
-              <span className="text-lg font-bold text-accent-lime block">3x</span>
+              <span className="text-lg font-bold text-accent-cyan block">3x</span>
               <span>Deal Velocity</span>
             </div>
           </div>

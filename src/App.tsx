@@ -124,7 +124,7 @@ export const App: React.FC = () => {
         className="fixed bottom-4 left-4 z-50 flex items-center gap-2 p-2 sm:px-3.5 sm:py-2 rounded-full bg-background-deep/90 border border-white/10 shadow-2xl backdrop-blur-xl font-mono text-[11px] text-synq-muted transition-all hover:border-accent-cyan/40"
       >
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-accent-lime animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_#00F0FF] animate-pulse" />
           <span className="hidden sm:inline text-white font-semibold">17 Nodes</span>
           <span className="hidden md:inline text-synq-dim">•</span>
           <span className="text-accent-cyan font-bold">42 Bridges Synchronized</span>
@@ -135,7 +135,7 @@ export const App: React.FC = () => {
           className="ml-2 px-2.5 py-1 rounded-full bg-surface-100 hover:bg-surface-200 text-white font-medium border border-white/10 transition-colors flex items-center gap-1"
         >
           <span>{currentRoute === 'matrix' ? 'Overview' : 'Matrix'}</span>
-          <span className="text-[10px] text-accent-lime">›</span>
+          <span className="text-[10px] text-accent-cyan">›</span>
         </button>
       </aside>
     </div>

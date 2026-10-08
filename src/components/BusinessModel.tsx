@@ -40,7 +40,7 @@ export const BusinessModel: React.FC<BusinessModelProps> = ({ onStartSynq }) => 
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="font-mono text-xs text-synq-dim">LEVEL 0{idx + 1}</span>
-                    <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-surface-200 text-accent-lime font-bold">
+                    <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-surface-200 text-accent-cyan font-bold">
                       Outcome: {lvl.outcome}
                     </span>
                   </div>
