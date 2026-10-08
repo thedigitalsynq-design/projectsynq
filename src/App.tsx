@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, PageRoute } from './components/Navbar';
-import { OverviewPage } from './pages/OverviewPage';
-import { WhyPage } from './pages/WhyPage';
-import { HowItWorksPage } from './pages/HowItWorksPage';
-import { WhoItServesPage } from './pages/WhoItServesPage';
-import { StakeholderMatrixPage } from './pages/StakeholderMatrixPage';
-import { ValuePage } from './pages/ValuePage';
-import { EngagePage } from './pages/EngagePage';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { Navbar, PageRoute, ALL_16_CHAPTERS } from './components/Navbar';
+import { Page01_HomePage } from './pages/Page01_HomePage';
+import { Page02_EcosystemPage } from './pages/Page02_EcosystemPage';
+import { Page03_StakeholdersPage } from './pages/Page03_StakeholdersPage';
+import { Page04_ProblemsPage } from './pages/Page04_ProblemsPage';
+import { Page05_BottlenecksPage } from './pages/Page05_BottlenecksPage';
+import { Page06_SilosPage } from './pages/Page06_SilosPage';
+import { Page07_OpportunitiesPage } from './pages/Page07_OpportunitiesPage';
+import { Page08_ProjectSynqPage } from './pages/Page08_ProjectSynqPage';
+import { Page09_HowItWorksPage } from './pages/Page09_HowItWorksPage';
+import { Page10_StakeholderJourneysPage } from './pages/Page10_StakeholderJourneysPage';
+import { Page11_ProjectLifecyclePage } from './pages/Page11_ProjectLifecyclePage';
+import { Page12_ProjectsPage } from './pages/Page12_ProjectsPage';
+import { Page13_OutcomesPage } from './pages/Page13_OutcomesPage';
+import { Page14_IntelligencePage } from './pages/Page14_IntelligencePage';
+import { Page15_ParticipatePage } from './pages/Page15_ParticipatePage';
+import { Page16_AboutPage } from './pages/Page16_AboutPage';
 
 export const App: React.FC = () => {
   const [currentRoute, setCurrentRoute] = useState<PageRoute>('overview');
@@ -15,21 +23,39 @@ export const App: React.FC = () => {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.toLowerCase().replace('#', '');
-      
-      if (!hash || hash === 'overview') {
+
+      if (!hash || hash === 'overview' || hash === 'home') {
         setCurrentRoute('overview');
-      } else if (hash === 'why' || hash === 'problem') {
-        setCurrentRoute('why');
-      } else if (hash === 'how-it-works' || hash === 'mechanism' || hash === 'architecture') {
-        setCurrentRoute('how-it-works');
-      } else if (hash === 'stakeholders' || hash === 'ecosystems' || hash === 'use-cases') {
+      } else if (hash === 'ecosystem' || hash === 'layers') {
+        setCurrentRoute('ecosystem');
+      } else if (hash === 'stakeholders' || hash === 'directory') {
         setCurrentRoute('stakeholders');
-      } else if (hash === 'matrix' || hash === 'constellation' || hash === 'heatmap') {
-        setCurrentRoute('matrix');
-      } else if (hash === 'value' || hash === 'model' || hash === 'intelligence') {
-        setCurrentRoute('value');
-      } else if (hash === 'engage' || hash === 'contact' || hash === 'diagnostic') {
-        setCurrentRoute('engage');
+      } else if (hash === 'problems' || hash === 'why' || hash === 'friction') {
+        setCurrentRoute('problems');
+      } else if (hash === 'bottlenecks' || hash === 'chokepoints') {
+        setCurrentRoute('bottlenecks');
+      } else if (hash === 'silos' || hash === 'connections' || hash === 'matrix') {
+        setCurrentRoute('silos');
+      } else if (hash === 'opportunities' || hash === 'whitespaces') {
+        setCurrentRoute('opportunities');
+      } else if (hash === 'projectsynq' || hash === 'concept') {
+        setCurrentRoute('projectsynq');
+      } else if (hash === 'how-it-works' || hash === 'mechanism' || hash === 'cadence') {
+        setCurrentRoute('how-it-works');
+      } else if (hash === 'journeys' || hash === 'experience') {
+        setCurrentRoute('journeys');
+      } else if (hash === 'lifecycle' || hash === 'project-lifecycle') {
+        setCurrentRoute('lifecycle');
+      } else if (hash === 'projects' || hash === 'use-cases') {
+        setCurrentRoute('projects');
+      } else if (hash === 'outcomes' || hash === 'value') {
+        setCurrentRoute('outcomes');
+      } else if (hash === 'intelligence' || hash === 'telemetry') {
+        setCurrentRoute('intelligence');
+      } else if (hash === 'participate' || hash === 'engage' || hash === 'intake') {
+        setCurrentRoute('participate');
+      } else if (hash === 'about' || hash === 'why-synq' || hash === 'faq') {
+        setCurrentRoute('about');
       } else {
         setCurrentRoute('overview');
       }
@@ -50,92 +76,80 @@ export const App: React.FC = () => {
   const renderActivePage = () => {
     switch (currentRoute) {
       case 'overview':
-        return (
-          <OverviewPage
-            onNavigate={(hash) => navigateTo(hash)}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
-      case 'why':
-        return (
-          <WhyPage
-            onNavigate={(hash) => navigateTo(hash)}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
-      case 'how-it-works':
-        return (
-          <HowItWorksPage
-            onNavigate={(hash) => navigateTo(hash)}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
+        return <Page01_HomePage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'ecosystem':
+        return <Page02_EcosystemPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
       case 'stakeholders':
-        return (
-          <WhoItServesPage
-            onNavigate={(hash) => navigateTo(hash)}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
+        return <Page03_StakeholdersPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'problems':
+      case 'why':
+        return <Page04_ProblemsPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'bottlenecks':
+        return <Page05_BottlenecksPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'silos':
       case 'matrix':
-        return (
-          <StakeholderMatrixPage
-            onBackToHome={() => navigateTo('overview')}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
+        return <Page06_SilosPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'opportunities':
+        return <Page07_OpportunitiesPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'projectsynq':
+        return <Page08_ProjectSynqPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'how-it-works':
+        return <Page09_HowItWorksPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'journeys':
+        return <Page10_StakeholderJourneysPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'lifecycle':
+        return <Page11_ProjectLifecyclePage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'projects':
+        return <Page12_ProjectsPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'outcomes':
       case 'value':
-        return (
-          <ValuePage
-            onNavigate={(hash) => navigateTo(hash)}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
+        return <Page13_OutcomesPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'intelligence':
+        return <Page14_IntelligencePage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
+      case 'participate':
       case 'engage':
-        return (
-          <EngagePage
-            onNavigate={(hash) => navigateTo(hash)}
-          />
-        );
+        return <Page15_ParticipatePage onNavigate={navigateTo} />;
+      case 'about':
+        return <Page16_AboutPage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
       default:
-        return (
-          <OverviewPage
-            onNavigate={(hash) => navigateTo(hash)}
-            onStartSynq={() => navigateTo('engage')}
-          />
-        );
+        return <Page01_HomePage onNavigate={navigateTo} onStartSynq={() => navigateTo('participate')} />;
     }
   };
 
+  // Locate chapter number for current route
+  const currentChapter = ALL_16_CHAPTERS.find(c => c.id === currentRoute) || ALL_16_CHAPTERS[0];
+
   return (
-    <div className="relative min-h-screen bg-background text-synq-text selection:bg-accent-cyan/20 selection:text-accent-cyan overflow-x-hidden font-sans">
-      {/* Sticky Top Multi-Page Header */}
+    <div className="relative min-h-screen bg-transparent text-synq-text font-sans antialiased selection:bg-accent-cyan/20 selection:text-accent-cyan">
+      {/* Universal Floating Navigation Header */}
       <Navbar
         currentRoute={currentRoute}
         onNavigate={(route) => navigateTo(route)}
       />
 
-      {/* Render Current Active Page */}
+      {/* Render Current Active Chapter */}
       {renderActivePage()}
 
-      {/* Persistent Floating Ecosystem Connection Telemetry HUD */}
+      {/* Floating Ecosystem Telemetry HUD with Chapter Progression */}
       <aside
-        aria-label="Ecosystem Connection Telemetry"
-        className="fixed bottom-4 left-4 z-50 flex items-center gap-2 p-2 sm:px-3.5 sm:py-2 rounded-full bg-background-deep/90 border border-white/10 shadow-2xl backdrop-blur-xl font-mono text-[11px] text-synq-muted transition-all hover:border-accent-cyan/40"
+        aria-label="Ecosystem Storyline HUD"
+        className="fixed bottom-4 left-4 z-50 flex items-center gap-2 p-2 sm:px-4 sm:py-2 rounded-full bg-[#040D1A]/90 border border-sky-500/25 shadow-2xl backdrop-blur-xl font-mono text-[11px] text-zinc-300 transition-all hover:border-accent-cyan/50"
       >
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_#00F0FF] animate-pulse" />
-          <span className="hidden sm:inline text-white font-semibold">17 Nodes</span>
-          <span className="hidden md:inline text-synq-dim">•</span>
-          <span className="text-accent-cyan font-bold">42 Bridges Synchronized</span>
+          <span className="text-white font-bold">Ch {currentChapter.num}:</span>
+          <span className="hidden sm:inline text-sky-300 truncate max-w-[140px] sm:max-w-[200px]">{currentChapter.title}</span>
         </div>
 
         <button
-          onClick={() => navigateTo(currentRoute === 'matrix' ? 'overview' : 'matrix')}
-          className="ml-2 px-2.5 py-1 rounded-full bg-surface-100 hover:bg-surface-200 text-white font-medium border border-white/10 transition-colors flex items-center gap-1"
+          onClick={() => {
+            const nextIdx = (ALL_16_CHAPTERS.findIndex(c => c.id === currentRoute) + 1) % ALL_16_CHAPTERS.length;
+            navigateTo(ALL_16_CHAPTERS[nextIdx].id);
+          }}
+          className="ml-2 px-2.5 py-1 rounded-full bg-sky-950/60 hover:bg-sky-900/80 text-accent-cyan font-bold border border-sky-500/30 transition-colors flex items-center gap-1"
         >
-          <span>{currentRoute === 'matrix' ? 'Overview' : 'Matrix'}</span>
-          <span className="text-[10px] text-accent-cyan">›</span>
+          <span>Next Ch</span>
+          <span className="text-[10px]">›</span>
         </button>
       </aside>
     </div>
