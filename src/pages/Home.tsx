@@ -17,6 +17,7 @@ import { Flywheel } from '../components/Flywheel';
 import { Outcomes } from '../components/Outcomes';
 import { BusinessModel } from '../components/BusinessModel';
 import { WhyProjectSynq } from '../components/WhyProjectSynq';
+import { StrategicAuditFAQ } from '../components/StrategicAuditFAQ';
 import { Engagement } from '../components/Engagement';
 import { Footer } from '../components/Footer';
 
@@ -99,6 +100,9 @@ export const Home: React.FC<HomeProps> = ({ onNavigateMatrix }) => {
 
         {/* 25. Why ProjectSynq */}
         <WhyProjectSynq />
+
+        {/* 25b. Institutional Due Diligence FAQ */}
+        <StrategicAuditFAQ />
 
         {/* 26 & 27. CTA & Start a Synq Intake Terminal */}
         <Engagement onExploreModel={scrollToModel} />
