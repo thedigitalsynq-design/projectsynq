@@ -22,13 +22,13 @@ export const ValuePage: React.FC<ValuePageProps> = ({ onNavigate, onStartSynq })
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-lime tracking-wider uppercase mb-5">
             <TrendingUp className="w-3.5 h-3.5 text-accent-lime" />
-            <span>Chapter 06 / Value & Economics</span>
+            <span>Chapter 06 / Economics & Value</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            How Value Is Created:{' '}
+            Economics:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
-              Intelligence, Flywheel & Commercial Model
+              Value Creation & Commercial Model
             </span>
           </h1>
 
@@ -60,10 +60,10 @@ export const ValuePage: React.FC<ValuePageProps> = ({ onNavigate, onStartSynq })
         {/* Next Chapter Progression */}
         <PageNavigationBanner
           currentPageNumber="06"
-          currentPageTitle="Value Creation & Business Model"
+          currentPageTitle="Economics"
           nextRouteHash="#engage"
           nextPageNumber="07"
-          nextPageTitle="Start a Synq: Friction Intake Terminal"
+          nextPageTitle="Terminal: 72-Hour Rapid Diagnostic"
           nextPageTeaser="Submit your confidential bilateral friction brief. Receive a comprehensive root-cause diagnosis within 72 hours under institutional NDA."
           onNavigate={onNavigate}
         />

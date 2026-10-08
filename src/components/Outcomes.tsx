@@ -76,11 +76,11 @@ export const Outcomes: React.FC = () => {
             <span>14 / Tangible Value Outcomes</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.035em] text-white leading-[1.04]">
             What changes when the space between nodes works?
           </h2>
 
-          <p className="mt-5 text-base sm:text-lg text-synq-muted leading-relaxed">
+          <p className="mt-5 text-base sm:text-xl text-zinc-300 leading-relaxed">
             When inter-node impedance is removed, stakeholders do not merely close one deal — they unlock compounding velocity, shared margin, and collective economic upside.
           </p>
         </div>

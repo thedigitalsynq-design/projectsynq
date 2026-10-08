@@ -20,13 +20,13 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate, onSt
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <Cpu className="w-3.5 h-3.5 text-accent-cyan" />
-            <span>Chapter 03 / The Operating Engine</span>
+            <span>Chapter 03 / The Mechanism</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            How ProjectSynq Works:{' '}
+            Mechanism:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
-              The Orchestration Mechanism
+              The Orchestration Engine
             </span>
           </h1>
 
@@ -52,11 +52,11 @@ export const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ onNavigate, onSt
         {/* Next Chapter Progression */}
         <PageNavigationBanner
           currentPageNumber="03"
-          currentPageTitle="How It Works"
+          currentPageTitle="Mechanism"
           nextRouteHash="#stakeholders"
           nextPageNumber="04"
-          nextPageTitle="Who We Serve: Stakeholder Solutions & Real Use Cases"
-          nextPageTeaser="Review dedicated solutions tailored for Studio Heads, OTT Commissioners, Creators, Talent Agencies, Private Credit, and Tech Distributors."
+          nextPageTitle="Ecosystem: Stakeholder Solutions"
+          nextPageTeaser="Review dedicated solutions tailored for Studio Heads, OTT Commissioners, Creators, Talent Agencies, and Private Credit."
           onNavigate={onNavigate}
         />
       </main>

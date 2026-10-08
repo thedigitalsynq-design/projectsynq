@@ -19,13 +19,13 @@ export const WhyPage: React.FC<WhyPageProps> = ({ onNavigate, onStartSynq }) => 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <AlertTriangle className="w-3.5 h-3.5 text-accent-cyan" />
-            <span>Chapter 02 / The Ecosystem Problem</span>
+            <span>Chapter 02 / The Friction Layer</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Why ProjectSynq Exists:{' '}
+            Friction:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
-              The Invisible Friction Layer
+              The Invisible Space Between Nodes
             </span>
           </h1>
 
@@ -48,11 +48,11 @@ export const WhyPage: React.FC<WhyPageProps> = ({ onNavigate, onStartSynq }) => 
         {/* Next Chapter Progression */}
         <PageNavigationBanner
           currentPageNumber="02"
-          currentPageTitle="Why It Exists"
+          currentPageTitle="Friction"
           nextRouteHash="#how-it-works"
           nextPageNumber="03"
-          nextPageTitle="How ProjectSynq Works: The Operating Engine"
-          nextPageTeaser="Inspect the exact mathematical mechanism (NODE → GAP → BRIDGE → FLOW → LOOP), the ABCDEF operating cycle, and trust protocols that turn gridlock into flow."
+          nextPageTitle="Mechanism: The Operating Engine"
+          nextPageTeaser="Inspect the exact invariant pathway (NODE → GAP → BRIDGE → FLOW → LOOP), the ABCDEF operating cycle, and trust protocols."
           onNavigate={onNavigate}
         />
       </main>

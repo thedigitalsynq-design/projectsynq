@@ -18,12 +18,12 @@ export const WhatIsProjectSynq: React.FC = () => {
             <span>02 / Operating Definition</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.035em] text-white leading-[1.04]">
             A new operating layer between stakeholders.
           </h2>
 
-          <p className="mt-5 text-base sm:text-lg text-synq-muted leading-relaxed font-normal">
-            ProjectSynq is an <strong className="text-white font-semibold">asset-light, trust-based, process-driven operating layer</strong> engineered between stakeholders to diagnose gaps, design bridges, and convert friction into repeatable systems.
+          <p className="mt-5 text-base sm:text-xl text-zinc-300 leading-relaxed font-normal">
+            ProjectSynq is an <strong className="text-white font-bold">asset-light, trust-based, process-driven operating layer</strong> engineered between stakeholders to diagnose gaps, design bridges, and convert friction into repeatable systems.
           </p>
         </div>
 

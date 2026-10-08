@@ -72,11 +72,11 @@ export const Architecture: React.FC = () => {
             <span>04 / System Architecture</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.035em] text-white leading-[1.04]">
             From fragmented nodes to functioning systems.
           </h2>
 
-          <p className="mt-5 text-base sm:text-lg text-synq-muted leading-relaxed">
+          <p className="mt-5 text-base sm:text-xl text-zinc-300 leading-relaxed">
             ProjectSynq functions as a unified three-layer architecture. Each layer reinforces the others, translating cognitive diagnostics into concrete, repeatable operations.
           </p>
         </div>

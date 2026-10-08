@@ -15,11 +15,11 @@ export const EngagePage: React.FC<EngagePageProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <Send className="w-3.5 h-3.5 text-accent-cyan" />
-            <span>Chapter 07 / Conversion Terminal</span>
+            <span>Chapter 07 / Terminal</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Start a Synq:{' '}
+            Terminal:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
               72-Hour Rapid Diagnostic Intake
             </span>

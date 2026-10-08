@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Zap, Sparkles, Compass } from 'lucide-react';
+import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
 
 export type PageRoute = 'overview' | 'why' | 'how-it-works' | 'stakeholders' | 'matrix' | 'value' | 'engage';
 
@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -22,11 +22,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
 
   const navChapters: { id: PageRoute; label: string; num: string }[] = [
     { id: 'overview', label: 'Overview', num: '01' },
-    { id: 'why', label: 'Why It Exists', num: '02' },
-    { id: 'how-it-works', label: 'How It Works', num: '03' },
-    { id: 'stakeholders', label: 'Who We Serve', num: '04' },
-    { id: 'matrix', label: 'Connection Atlas', num: '05' },
-    { id: 'value', label: 'Value & Model', num: '06' },
+    { id: 'why', label: 'Friction', num: '02' },
+    { id: 'how-it-works', label: 'Mechanism', num: '03' },
+    { id: 'stakeholders', label: 'Ecosystem', num: '04' },
+    { id: 'matrix', label: 'Atlas', num: '05' },
+    { id: 'value', label: 'Economics', num: '06' },
   ];
 
   const handleSelectRoute = (route: PageRoute) => {
@@ -39,15 +39,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'py-3 bg-background-deep/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-2xl shadow-black/60'
-          : 'py-5 bg-background-deep/60 backdrop-blur-md border-b border-white/[0.04]'
+          ? 'py-3.5 bg-[#07090E]/80 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.65)]'
+          : 'py-5 bg-[#07090E]/40 backdrop-blur-md border-b border-white/[0.04]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo Wordmark */}
+        {/* Brand Identity / Logo */}
         <button
           onClick={() => handleSelectRoute('overview')}
-          className="flex items-center gap-2 group focus:outline-none text-left"
+          className="flex items-center gap-3 group focus:outline-none text-left"
           aria-label="ProjectSynq Home"
         >
           <span className="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-baseline">
@@ -58,13 +58,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
               <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-accent-lime opacity-80" />
             </span>
           </span>
-          <span className="hidden xl:inline-block ml-2 text-[10px] uppercase font-mono tracking-widest text-synq-dim px-2 py-0.5 rounded border border-white/5 bg-surface-100/60">
-            The Connective Layer
+          <span className="hidden xl:inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-synq-dim px-2.5 py-1 rounded-full border border-white/[0.08] bg-white/[0.03]">
+            <span className="w-1 h-1 rounded-full bg-accent-cyan" />
+            <span>The Connective Layer</span>
           </span>
         </button>
 
-        {/* Desktop Progressive Multi-Page Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 p-1 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl">
+        {/* Apple Cupertino Island Navigation Bar */}
+        <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-[#0D121D]/80 border border-white/[0.09] backdrop-blur-2xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
           {navChapters.map((chapter) => {
             const isActive = currentRoute === chapter.id;
 
@@ -72,18 +73,26 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
               <button
                 key={chapter.id}
                 onClick={() => handleSelectRoute(chapter.id)}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-xl transition-all duration-200 flex items-center gap-1.5 ${
+                className={`group relative px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-300 flex items-center gap-2 whitespace-nowrap ${
                   isActive
-                    ? 'bg-white/[0.12] text-white border border-white/[0.12] shadow-sm'
-                    : 'text-synq-muted hover:text-white hover:bg-white/[0.03]'
+                    ? 'bg-white/[0.12] text-white border border-white/[0.16] shadow-[0_2px_12px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.2)]'
+                    : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
-                <span className={`text-[10px] font-mono ${isActive ? 'text-accent-cyan font-bold' : 'text-synq-dim'}`}>
-                  {chapter.num}
-                </span>
-                <span>{chapter.label}</span>
+                {/* Active Indicator Micro-Dot */}
+                {isActive ? (
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan shadow-[0_0_8px_#00F0FF]" />
+                ) : (
+                  <span className="font-mono text-[10px] text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                    {chapter.num}
+                  </span>
+                )}
+
+                <span className="tracking-tight">{chapter.label}</span>
+
+                {/* 17 Nodes Badge on Atlas */}
                 {chapter.id === 'matrix' && (
-                  <span className="text-[9px] font-mono px-1 py-0.2 rounded bg-surface-200 text-accent-lime">
+                  <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-accent-lime/15 text-accent-lime border border-accent-lime/30 leading-none">
                     17N
                   </span>
                 )}
@@ -92,14 +101,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
           })}
         </nav>
 
-        {/* Primary CTA & Mobile Toggle */}
+        {/* Primary CTA & Mobile Hamburger */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => handleSelectRoute('engage')}
-            className={`group relative inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 shadow-md active:scale-95 ${
+            className={`group relative inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-tight transition-all duration-300 active:scale-95 whitespace-nowrap ${
               currentRoute === 'engage'
-                ? 'bg-accent-lime text-background-deep font-bold shadow-[0_0_25px_rgba(204,255,0,0.3)]'
-                : 'bg-accent-cyan hover:bg-[#33F3FF] text-background-deep shadow-[0_0_20px_rgba(0,240,255,0.25)]'
+                ? 'bg-accent-lime text-background-deep shadow-[0_0_30px_rgba(204,255,0,0.4)]'
+                : 'bg-gradient-to-r from-accent-cyan to-[#2EE4FF] text-background-deep shadow-[0_0_25px_rgba(0,240,255,0.3)] hover:shadow-[0_0_35px_rgba(0,240,255,0.5)] hover:scale-[1.02]'
             }`}
           >
             <span>Start a Synq</span>
@@ -109,30 +118,30 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-synq-muted hover:text-white rounded-xl hover:bg-white/5 focus:outline-none"
+            className="lg:hidden p-2 text-zinc-400 hover:text-white rounded-full hover:bg-white/5 focus:outline-none"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Apple-Grade Full-Screen Blur) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-background-deep/98 backdrop-blur-2xl border-b border-surface-border px-6 py-8 min-h-[calc(100vh-65px)] flex flex-col justify-between animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="space-y-3">
-            <div className="text-[11px] font-mono uppercase tracking-wider text-synq-dim mb-4">
-              Ecosystem Navigation Chapters
+        <div className="lg:hidden fixed inset-x-0 top-[60px] bg-[#07090E]/98 backdrop-blur-3xl border-b border-white/[0.08] px-6 py-8 min-h-[calc(100vh-60px)] flex flex-col justify-between animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="space-y-2">
+            <div className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 mb-3 px-2">
+              Ecosystem Chapters
             </div>
 
             {navChapters.map((chapter) => (
               <button
                 key={chapter.id}
                 onClick={() => handleSelectRoute(chapter.id)}
-                className={`w-full text-left py-3 px-4 rounded-xl text-base font-bold transition-all flex items-center justify-between border ${
+                className={`w-full text-left py-3.5 px-4 rounded-2xl text-base font-bold transition-all flex items-center justify-between border ${
                   currentRoute === chapter.id
-                    ? 'bg-white/[0.08] text-white border-accent-cyan/40 shadow-sm'
-                    : 'text-synq-muted hover:text-white border-transparent'
+                    ? 'bg-white/[0.1] text-white border-accent-cyan/40 shadow-sm'
+                    : 'text-zinc-400 hover:text-white border-transparent hover:bg-white/[0.03]'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -142,21 +151,21 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
                   <span>{chapter.label}</span>
                 </div>
                 {chapter.id === 'matrix' && (
-                  <span className="text-xs font-mono text-accent-lime">17 NODES →</span>
+                  <span className="text-xs font-mono text-accent-lime font-bold">17 NODES →</span>
                 )}
               </button>
             ))}
           </div>
 
-          <div className="pt-6 border-t border-white/10 space-y-3">
+          <div className="pt-6 border-t border-white/[0.08] space-y-3">
             <button
               onClick={() => handleSelectRoute('engage')}
-              className="w-full py-3.5 rounded-xl text-center text-sm font-bold bg-accent-cyan text-background-deep shadow-lg"
+              className="w-full py-4 rounded-full text-center text-sm font-bold bg-gradient-to-r from-accent-cyan to-[#2EE4FF] text-background-deep shadow-xl"
             >
-              Start a Synq (Friction Intake)
+              Start a Synq (72h Diagnostic)
             </button>
-            <div className="text-center font-mono text-[11px] text-synq-dim">
-              72-Hour Rapid Diagnostic • Institutional NDA Protected
+            <div className="text-center font-mono text-[11px] text-zinc-500">
+              Institutional Non-Disclosure Guaranteed • 0% Equity Drag
             </div>
           </div>
         </div>

@@ -40,16 +40,16 @@ export const Hero: React.FC<HeroProps> = ({ onExploreModel, onStartSynq, onExplo
         </div>
 
         {/* Hero Headlines */}
-        <div className="max-w-4xl text-center sm:text-left mb-10">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
+        <div className="max-w-5xl text-center sm:text-left mb-10">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-[-0.035em] text-white leading-[1.04]">
             The problem is often not inside the node.{' '}
-            <span className="block text-gradient-cyan mt-1 sm:mt-2">
+            <span className="block text-gradient-cyan mt-1 sm:mt-2 font-black">
               It's between the nodes.
             </span>
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl md:text-2xl text-synq-muted font-normal leading-relaxed max-w-3xl">
-            ProjectSynq is the <span className="text-white font-medium">Connective Layer</span> — breaking down isolated silos to connect people, projects, resources, data, and opportunities at the exact right time.
+          <p className="mt-6 text-lg sm:text-2xl md:text-3xl text-zinc-300 font-normal leading-relaxed max-w-3xl">
+            ProjectSynq is the <strong className="text-white font-bold">Connective Layer</strong> — breaking down isolated silos to connect people, projects, resources, data, and opportunities at the exact right time.
           </p>
 
           {/* Action CTAs */}

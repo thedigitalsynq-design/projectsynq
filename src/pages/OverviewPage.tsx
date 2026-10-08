@@ -34,11 +34,11 @@ export const OverviewPage: React.FC<OverviewPageProps> = ({ onNavigate, onStartS
         {/* Next Chapter Progression */}
         <PageNavigationBanner
           currentPageNumber="01"
-          currentPageTitle="What ProjectSynq Is"
+          currentPageTitle="Overview"
           nextRouteHash="#why"
           nextPageNumber="02"
-          nextPageTitle="Why ProjectSynq Exists: The Friction Layer"
-          nextPageTeaser="Discover why the problem in complex ecosystems is rarely inside individual nodes — and examine the 8 super-problems causing ₹15,000+ Cr of annual leakage."
+          nextPageTitle="Friction: The Invisible Layer"
+          nextPageTeaser="Discover why ecosystem breakdowns happen between nodes — examining the 8 super-problems causing ₹15,000+ Cr of annual leakage."
           onNavigate={onNavigate}
         />
       </main>

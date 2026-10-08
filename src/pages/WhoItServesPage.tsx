@@ -18,13 +18,13 @@ export const WhoItServesPage: React.FC<WhoItServesPageProps> = ({ onNavigate, on
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <Users className="w-3.5 h-3.5 text-accent-cyan" />
-            <span>Chapter 04 / Stakeholder Solutions</span>
+            <span>Chapter 04 / The Ecosystem</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Who ProjectSynq Serves:{' '}
+            Ecosystem:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
-              Solutions & Real-World Use Cases
+              Stakeholder Directory & Solutions
             </span>
           </h1>
 
@@ -44,10 +44,10 @@ export const WhoItServesPage: React.FC<WhoItServesPageProps> = ({ onNavigate, on
         {/* Next Chapter Progression */}
         <PageNavigationBanner
           currentPageNumber="04"
-          currentPageTitle="Who We Serve"
+          currentPageTitle="Ecosystem"
           nextRouteHash="#matrix"
           nextPageNumber="05"
-          nextPageTitle="How Stakeholders Connect: The Complete Ecosystem Atlas"
+          nextPageTitle="Atlas: The 17-Stakeholder Diagnostic Matrix"
           nextPageTeaser="Dive into the 17-Stakeholder Constellation Mesh with 42 bilateral bridges, the 17x8 heat matrix, and searchable 100+ problem catalog."
           onNavigate={onNavigate}
         />

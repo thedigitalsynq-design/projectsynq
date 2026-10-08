@@ -161,15 +161,15 @@ export const ConnectTheDots: React.FC = () => {
             <span>Core Operating Principle</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-[-0.035em] text-white leading-[1.04]">
             Connect the Dots.{' '}
-            <span className="block text-gradient-cyan mt-1 sm:mt-2">
+            <span className="block text-gradient-cyan mt-1 sm:mt-2 font-black">
               Leverage Every Silo.
             </span>
           </h2>
 
-          <p className="mt-6 text-base sm:text-lg text-synq-muted leading-relaxed font-normal">
-            Every day, billions in capabilities, resources, talent hours, and creative IP remain trapped in isolated silos. ProjectSynq identifies hidden intersections and orchestrates bilateral bridges — <strong className="text-white font-semibold">connecting the right stakeholder, asset, and opportunity at the exact right time</strong>.
+          <p className="mt-6 text-base sm:text-xl text-zinc-300 leading-relaxed font-normal">
+            Every day, billions in capabilities, resources, talent hours, and creative IP remain trapped in isolated silos. ProjectSynq identifies hidden intersections and orchestrates bilateral bridges — <strong className="text-white font-bold">connecting the right stakeholder, asset, and opportunity at the exact right time</strong>.
           </p>
         </div>
 
