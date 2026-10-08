@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { ProblemInsight } from '../components/ProblemInsight';
+import { ConnectTheDots } from '../components/ConnectTheDots';
 import { WhatIsProjectSynq } from '../components/WhatIsProjectSynq';
 import { NotAnotherModel } from '../components/NotAnotherModel';
 import { Architecture } from '../components/Architecture';
@@ -55,6 +56,9 @@ export const Home: React.FC<HomeProps> = ({ onNavigateMatrix }) => {
 
         {/* 09. The Foundational Insight & The Friction Layer */}
         <ProblemInsight />
+
+        {/* 09b. Core Operating Principle: Connect the Dots. Leverage Every Silo. */}
+        <ConnectTheDots />
 
         {/* 10. What Is ProjectSynq (Connect, Orchestrate, Systemize) */}
         <WhatIsProjectSynq />

@@ -21,7 +21,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreModel, onStartSynq, onExplo
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Category Pill Tag */}
-        <div className="flex items-center justify-center sm:justify-start mb-6">
+        {/* Category Pill Tag & Core Principle */}
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 mb-6">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-100/90 border border-white/10 backdrop-blur-md shadow-sm">
             <span className="w-2 h-2 rounded-full bg-accent-cyan animate-ping" />
             <span className="text-xs font-mono font-medium tracking-wide text-synq-muted">
@@ -30,6 +31,11 @@ export const Hero: React.FC<HeroProps> = ({ onExploreModel, onStartSynq, onExplo
             <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded bg-surface-200 text-accent-lime">
               17 NODES CONNECTED
             </span>
+          </div>
+
+          <div className="inline-flex items-center gap-2 apple-pill px-3 py-1 font-mono text-xs text-accent-cyan bg-accent-cyan/[0.08] border-accent-cyan/20">
+            <Sparkles className="w-3 h-3 text-accent-cyan" />
+            <span>CONNECT THE DOTS • LEVERAGE EVERY SILO</span>
           </div>
         </div>
 
@@ -43,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreModel, onStartSynq, onExplo
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl md:text-2xl text-synq-muted font-normal leading-relaxed max-w-3xl">
-            ProjectSynq is the <span className="text-white font-medium">Connective Layer</span> — an Inter-Node Orchestration system that makes fragmented stakeholders, processes, resources and opportunities work in sync.
+            ProjectSynq is the <span className="text-white font-medium">Connective Layer</span> — breaking down isolated silos to connect people, projects, resources, data, and opportunities at the exact right time.
           </p>
 
           {/* Action CTAs */}
