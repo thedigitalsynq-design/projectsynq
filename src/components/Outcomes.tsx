@@ -63,7 +63,7 @@ export const Outcomes: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#08090C] border-t border-white/[0.07]">
+    <section className="relative py-24 md:py-32 border-t border-sky-500/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">

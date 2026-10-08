@@ -32,7 +32,7 @@ export const PageNavigationBanner: React.FC<PageNavigationBannerProps> = ({
     }
   };
   return (
-    <section className="relative py-16 border-t border-white/[0.07] bg-[#08090C]">
+    <section className="relative py-20 border-t border-sky-500/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="clean-card p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>

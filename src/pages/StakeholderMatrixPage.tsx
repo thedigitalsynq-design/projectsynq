@@ -64,7 +64,7 @@ export const StakeholderMatrixPage: React.FC<StakeholderMatrixPageProps> = ({
   return (
     <div className="relative min-h-screen bg-background text-synq-text selection:bg-accent-cyan/20 selection:text-accent-cyan overflow-x-hidden font-sans pb-24">
       {/* Standardized Chapter 05 Page Header */}
-      <section className="relative pt-32 pb-16 border-b border-white/[0.07] bg-[#08090C] overflow-hidden">
+      <section className="relative pt-36 pb-20 border-b border-sky-500/15 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 clean-pill px-3 py-1 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <Compass className="w-3.5 h-3.5 text-accent-cyan" />

@@ -12,23 +12,23 @@ interface WhoItServesPageProps {
 
 export const WhoItServesPage: React.FC<WhoItServesPageProps> = ({ onNavigate, onStartSynq }) => {
   return (
-    <div className="relative min-h-screen bg-background text-synq-text font-sans pt-28">
+    <div className="relative min-h-screen bg-transparent text-synq-text font-sans">
       {/* Chapter Page Header */}
-      <section className="relative pb-16 border-b border-white/[0.06] overflow-hidden">
+      <section className="relative pt-36 pb-20 border-b border-sky-500/15 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 clean-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
             <Users className="w-3.5 h-3.5 text-accent-cyan" />
             <span>Chapter 04 / The Ecosystem</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-white leading-tight">
             Ecosystem:{' '}
             <span className="block text-gradient-cyan mt-1 sm:mt-2">
               Stakeholder Directory & Solutions
             </span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-xl text-synq-muted leading-relaxed max-w-3xl">
+          <p className="mt-6 text-lg sm:text-xl text-zinc-300 font-light leading-relaxed max-w-3xl">
             Whether you are a studio head managing stranded development slates, an OTT commissioner seeking de-risked delivery, or an investor demanding milestone escrow — see how our operating layer resolves your specific friction.
           </p>
         </div>

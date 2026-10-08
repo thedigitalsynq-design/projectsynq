@@ -8,7 +8,15 @@
 
 @layer base {
   body {
-    background-color: #08090C;
+    background-color: #030810;
+    background-image: 
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(14, 165, 233, 0.22), transparent 75%),
+      radial-gradient(ellipse 70% 50% at 85% 65%, rgba(2, 132, 199, 0.18), transparent 65%),
+      radial-gradient(circle at 15% 45%, rgba(0, 240, 255, 0.08), transparent 50%),
+      linear-gradient(rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    background-attachment: fixed;
     color: #F8FAFC;
     font-family: 'DM Serif Display', Georgia, -apple-system, BlinkMacSystemFont, "Segoe UI", serif;
     letter-spacing: -0.01em;
@@ -23,17 +31,17 @@
 
   h1 {
     font-weight: 400;
-    line-height: 1.08;
+    line-height: 1.05;
   }
 
   h2 {
     font-weight: 400;
-    line-height: 1.15;
+    line-height: 1.12;
   }
 
   h3 {
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.18;
   }
 }
 
@@ -43,46 +51,57 @@
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #08090C;
+  background: #030810;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E232E;
+  background: #0B2238;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #00F0FF;
 }
 
-/* Clean, Noise-Free Uniform Card System */
+/* Arctic Depths Glass Card System */
 .clean-card {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(6, 17, 32, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
   border-radius: 24px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .clean-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(9, 24, 44, 0.8);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 12px 40px -10px rgba(0, 240, 255, 0.12);
 }
 
 .clean-card-active {
-  background: rgba(255, 255, 255, 0.045);
-  border-color: rgba(0, 240, 255, 0.35);
-  box-shadow: 0 0 30px -10px rgba(0, 240, 255, 0.12);
+  background: rgba(10, 28, 52, 0.85);
+  border-color: rgba(0, 240, 255, 0.45);
+  box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.2);
 }
 
-/* Clean Capsule Pill */
+/* Arctic Capsule Pill */
 .clean-pill {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.18);
   border-radius: 9999px;
-  color: #A1A1AA;
+  color: #7DD3FC;
 }
 
-/* Subtle Headline Gradient */
+/* Fallback Aliases */
+.apple-pill {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 9999px;
+  color: #7DD3FC;
+}
+
+/* Arctic Glow Headline Gradient */
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #FFFFFF 40%, #00F0FF 100%);
+  background: linear-gradient(135deg, #FFFFFF 30%, #38BDF8 70%, #00F0FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

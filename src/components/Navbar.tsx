@@ -39,8 +39,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'py-3.5 bg-[#07090E]/80 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_12px_40px_rgba(0,0,0,0.65)]'
-          : 'py-5 bg-[#07090E]/40 backdrop-blur-md border-b border-white/[0.04]'
+          ? 'py-3.5 bg-[#030914]/85 backdrop-blur-2xl border-b border-sky-500/15 shadow-[0_12px_40px_rgba(0,0,0,0.7)]'
+          : 'py-5 bg-[#030914]/50 backdrop-blur-md border-b border-sky-500/10'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -58,14 +58,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentRoute, onNavigate }) => {
               <span className="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-accent-cyan opacity-80" />
             </span>
           </span>
-          <span className="hidden xl:inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-synq-dim px-2.5 py-1 rounded-full border border-white/[0.08] bg-white/[0.03]">
-            <span className="w-1 h-1 rounded-full bg-accent-cyan" />
+          <span className="hidden xl:inline-flex items-center gap-1.5 text-[10px] uppercase font-mono tracking-widest text-sky-300/80 px-2.5 py-1 rounded-full border border-sky-500/20 bg-sky-950/30">
+            <span className="w-1 h-1 rounded-full bg-accent-cyan shadow-[0_0_6px_#00F0FF]" />
             <span>The Connective Layer</span>
           </span>
         </button>
 
         {/* Apple Cupertino Island Navigation Bar */}
-        <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-[#0D121D]/80 border border-white/[0.09] backdrop-blur-2xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
+        <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-[#071629]/80 border border-sky-400/20 backdrop-blur-2xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_8px_30px_rgba(0,0,0,0.4)]">
           {navChapters.map((chapter) => {
             const isActive = currentRoute === chapter.id;
 
