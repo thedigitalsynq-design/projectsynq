@@ -1,153 +1,202 @@
 import React, { useState } from 'react';
-import { Network, GitMerge, Repeat, ArrowRight, ShieldCheck, Zap, Layers } from 'lucide-react';
+import { Network, GitMerge, Repeat, ArrowRight, ShieldCheck, Zap, Layers, Activity, Cpu, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const WhatIsProjectSynq: React.FC = () => {
-  const [activeCard, setActiveCard] = useState<'connect' | 'orchestrate' | 'systemize'>('connect');
-
-  const cards = [
-    {
-      id: 'connect' as const,
-      title: 'CONNECT',
-      tagline: 'Bring the right nodes together.',
-      icon: Network,
-      color: 'border-sky-500/40 text-sky-400',
-      glow: 'rgba(56, 189, 248, 0.15)',
-      description: 'Mapping fragmented, siloed stakeholders. Identifying latent capabilities, aligning initial intent, and opening secure bilateral communication corridors.',
-      bullets: [
-        'Stakeholder & capability topology mapping',
-        'Verification of bona fide intent and availability',
-        'Neutral introduction corridors without agent distortion'
-      ],
-      vizTitle: 'Bilateral Corridors Active',
-      nodesCount: '12 Target Nodes Identified',
-      flowState: 'Corridor Established'
-    },
-    {
-      id: 'orchestrate' as const,
-      title: 'ORCHESTRATE',
-      tagline: 'Make the relationship work.',
-      icon: GitMerge,
-      color: 'border-accent-cyan/60 text-accent-cyan',
-      glow: 'rgba(0, 240, 255, 0.2)',
-      description: 'Engineering the bridging mechanics — bilateral governance covenants, milestone-gated escrow, and live handoff supervision that dissolves execution drag.',
-      bullets: [
-        'Incentive-synchronized commercial structures',
-        'Milestone-triggered liquidity and asset handoffs',
-        'Active bottleneck clearance during live execution'
-      ],
-      vizTitle: 'Live Operational Flow',
-      nodesCount: 'Bridges Synchronizing Data & Capital',
-      flowState: 'Impedance Reduced by 88%'
-    },
-    {
-      id: 'systemize' as const,
-      title: 'SYSTEMIZE',
-      tagline: 'Turn what works into a repeatable system.',
-      icon: Repeat,
-      color: 'border-accent-lime/50 text-accent-lime',
-      glow: 'rgba(204, 255, 0, 0.15)',
-      description: 'Translating successful, hard-won collaboration breakthroughs into institutionalized SOPs, standardized agreements, and recurring ecosystem rails.',
-      bullets: [
-        'Codification of reusable contract templates & SLAs',
-        'Institutionalization into standard operating playbooks',
-        'Telemetry feedback into Inter-Node Intelligence™'
-      ],
-      vizTitle: 'Institutional Operating Rail',
-      nodesCount: 'Repeatable Multi-Stakeholder Engine',
-      flowState: 'Perpetual Systemic Loop'
-    }
-  ];
+  const [activePillar, setActivePillar] = useState<'connect' | 'orchestrate' | 'systemize'>('orchestrate');
 
   return (
-    <section id="model" className="relative py-24 md:py-32 bg-background border-t border-surface-border overflow-hidden">
+    <section id="model" className="relative py-28 md:py-36 bg-background border-t border-white/[0.06] overflow-hidden">
+      {/* Cupertino Ambient Background Light */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-accent-cyan/[0.03] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[400px] bg-accent-lime/[0.02] rounded-full blur-[140px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-100 border border-white/5 font-mono text-xs text-accent-cyan uppercase tracking-wider mb-4">
-            02 / Operating Definition
+        {/* Apple-style Section Header */}
+        <div className="max-w-3xl mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-cyan tracking-wider uppercase mb-5">
+            <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
+            <span>02 / Operating Definition</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
             A new operating layer between stakeholders.
           </h2>
-          <blockquote className="mt-6 p-5 rounded-xl bg-surface-100/60 border-l-2 border-accent-cyan text-base sm:text-lg text-synq-text leading-relaxed font-normal">
-            "ProjectSynq is an <strong className="text-white">asset-light, trust-based, process-driven operating layer</strong> that works between stakeholders to identify friction, diagnose gaps, design bridges, orchestrate flows, resolve bottlenecks, and create repeatable systems."
-          </blockquote>
+
+          <p className="mt-5 text-base sm:text-lg text-synq-muted leading-relaxed font-normal">
+            ProjectSynq is an <strong className="text-white font-semibold">asset-light, trust-based, process-driven operating layer</strong> engineered between stakeholders to diagnose gaps, design bridges, and convert friction into repeatable systems.
+          </p>
         </div>
 
-        {/* 3 Pillar Cards with hover interactions */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-          {cards.map((c) => {
-            const Icon = c.icon;
-            const isHovered = activeCard === c.id;
+        {/* Apple Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
 
-            return (
-              <div
-                key={c.id}
-                onMouseEnter={() => setActiveCard(c.id)}
-                className={`relative rounded-2xl p-7 md:p-8 transition-all duration-300 cursor-pointer border ${
-                  isHovered
-                    ? `bg-surface-100/90 ${c.color} shadow-2xl scale-[1.01]`
-                    : 'bg-surface-100/40 border-white/5 hover:border-white/20'
-                }`}
-                style={{
-                  boxShadow: isHovered ? `0 12px 40px -10px ${c.glow}` : 'none'
-                }}
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-surface-200 border border-white/5 ${c.color}`}>
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <span className="font-mono text-xs text-synq-dim uppercase tracking-wider">
-                    Pillar {c.id === 'connect' ? '01' : c.id === 'orchestrate' ? '02' : '03'}
-                  </span>
-                </div>
+          {/* Bento Card 1: HERO SPOTLIGHT (CONNECT) — Spans 7 columns */}
+          <div
+            onMouseEnter={() => setActivePillar('connect')}
+            className={`lg:col-span-7 apple-bento-card p-8 sm:p-10 flex flex-col justify-between group cursor-pointer transition-all duration-500 relative overflow-hidden ${
+              activePillar === 'connect' ? 'border-accent-cyan/40 bg-surface-100/90' : ''
+            }`}
+          >
+            <div className="absolute top-0 right-0 w-80 h-80 bg-accent-cyan/[0.05] rounded-full blur-3xl pointer-events-none" />
 
-                <h3 className="text-2xl font-bold tracking-tight text-white mb-2">
-                  {c.title}
-                </h3>
-                <p className="text-sm font-medium text-accent-cyan mb-4">
-                  {c.tagline}
-                </p>
-
-                <p className="text-xs sm:text-sm text-synq-muted leading-relaxed mb-6">
-                  {c.description}
-                </p>
-
-                <div className="pt-4 border-t border-white/5 space-y-2">
-                  {c.bullets.map((b, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-synq-text">
-                      <span className="text-accent-cyan mt-0.5">•</span>
-                      <span>{b}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Dynamic Visual Response Box based on Active Pillar */}
-        <div className="rounded-2xl border border-surface-border bg-background-deep p-6 md:p-8 relative overflow-hidden">
-          <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <span className="text-xs font-mono text-synq-dim uppercase tracking-wider">
-                Active System State Response
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-13 h-13 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-accent-cyan shadow-inner">
+                  <Network className="w-7 h-7" />
+                </div>
+                <span className="font-mono text-xs apple-pill px-3 py-1 text-synq-dim">
+                  PILLAR 01
+                </span>
+              </div>
+
+              <span className="font-mono text-xs uppercase tracking-wider text-accent-cyan font-semibold block mb-2">
+                Node Discovery & Alignment
               </span>
-              <h4 className="text-base sm:text-lg font-bold text-white mt-1 flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-accent-cyan animate-pulse" />
-                {cards.find(c => c.id === activeCard)?.vizTitle}
-              </h4>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                CONNECT
+              </h3>
+              <p className="text-base text-zinc-300 font-medium mb-4">
+                Bring the right nodes together without agency distortion.
+              </p>
+              <p className="text-sm text-synq-muted leading-relaxed max-w-xl">
+                We map fragmented counterparties across the ecosystem. By identifying latent capabilities and aligning commercial intent, we open secure bilateral communication corridors where friction once reigned.
+              </p>
             </div>
 
-            <div className="flex items-center gap-3 font-mono text-xs">
-              <span className="px-3 py-1.5 rounded-lg bg-surface-100 border border-white/5 text-synq-muted">
-                {cards.find(c => c.id === activeCard)?.nodesCount}
+            {/* Embedded Live Simulation Graphic */}
+            <div className="mt-8 pt-6 border-t border-white/[0.06]">
+              <div className="p-4 rounded-2xl bg-black/40 border border-white/[0.06] backdrop-blur-md flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-accent-cyan animate-pulse" />
+                  <span className="font-mono text-xs text-white font-medium">Bilateral Corridor: Creator ↔ OTT Platform</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="apple-pill px-2.5 py-1 text-[11px] font-mono text-accent-cyan">Verified Intent</span>
+                  <span className="apple-pill px-2.5 py-1 text-[11px] font-mono text-synq-muted">0% Broker Fee</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bento Card 2: ORCHESTRATE (Spans 5 columns) */}
+          <div
+            onMouseEnter={() => setActivePillar('orchestrate')}
+            className={`lg:col-span-5 apple-bento-card p-8 sm:p-10 flex flex-col justify-between group cursor-pointer transition-all duration-500 relative overflow-hidden ${
+              activePillar === 'orchestrate' ? 'border-accent-cyan/40 bg-surface-100/90' : ''
+            }`}
+          >
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-13 h-13 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-accent-cyan shadow-inner">
+                  <GitMerge className="w-7 h-7" />
+                </div>
+                <span className="font-mono text-xs apple-pill px-3 py-1 text-synq-dim">
+                  PILLAR 02
+                </span>
+              </div>
+
+              <span className="font-mono text-xs uppercase tracking-wider text-accent-cyan font-semibold block mb-2">
+                Bridge Engineering
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30">
-                {cards.find(c => c.id === activeCard)?.flowState}
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                ORCHESTRATE
+              </h3>
+              <p className="text-base text-zinc-300 font-medium mb-4">
+                Make the relationship work through active governance.
+              </p>
+              <p className="text-sm text-synq-muted leading-relaxed">
+                We engineer the bridging mechanics: incentive-synchronized contracts, milestone-gated liquidity, and active live handoff supervision that dissolves execution drag.
+              </p>
+            </div>
+
+            {/* Apple-style Widget: Live Flow Metric */}
+            <div className="mt-8 pt-6 border-t border-white/[0.06] space-y-3">
+              <div className="flex justify-between items-center text-xs font-mono">
+                <span className="text-synq-dim">Impedance Reduction:</span>
+                <span className="text-accent-cyan font-bold">-88% Drag</span>
+              </div>
+              <div className="w-full bg-white/[0.05] h-2 rounded-full overflow-hidden p-0.5">
+                <div className="bg-gradient-to-r from-accent-cyan to-accent-lime h-full rounded-full w-[88%]" />
+              </div>
+              <span className="text-[11px] font-mono text-synq-dim block text-right">Milestone-Gated Escrow Rails Active</span>
+            </div>
+          </div>
+
+          {/* Bento Card 3: SYSTEMIZE (Spans 5 columns) */}
+          <div
+            onMouseEnter={() => setActivePillar('systemize')}
+            className={`lg:col-span-5 apple-bento-card p-8 sm:p-10 flex flex-col justify-between group cursor-pointer transition-all duration-500 relative overflow-hidden ${
+              activePillar === 'systemize' ? 'border-accent-lime/40 bg-surface-100/90' : ''
+            }`}
+          >
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-13 h-13 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-accent-lime shadow-inner">
+                  <Repeat className="w-7 h-7" />
+                </div>
+                <span className="font-mono text-xs apple-pill px-3 py-1 text-synq-dim">
+                  PILLAR 03
+                </span>
+              </div>
+
+              <span className="font-mono text-xs uppercase tracking-wider text-accent-lime font-semibold block mb-2">
+                Institutionalization
+              </span>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+                SYSTEMIZE
+              </h3>
+              <p className="text-base text-zinc-300 font-medium mb-4">
+                Turn what works into a repeatable economic rail.
+              </p>
+              <p className="text-sm text-synq-muted leading-relaxed">
+                We codify breakthroughs into reusable contract templates, standardized operating playbooks, and compounding feedback for Inter-Node Intelligence™.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-accent-lime flex-shrink-0" />
+              <span className="text-xs font-mono text-synq-text">
+                Converted 14 Ad-Hoc Handoffs into Automated Playbooks
               </span>
             </div>
           </div>
+
+          {/* Bento Card 4: THE OPERATING MOAT (Spans 7 columns) */}
+          <div className="lg:col-span-7 apple-bento-card p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-surface-100/90 via-surface-100/40 to-background-deep">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2 apple-pill px-3 py-1 text-xs font-mono text-accent-lime">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-lime" />
+                  <span>NON-EXTRACTIVE GOVERNANCE</span>
+                </div>
+                <span className="font-mono text-xs text-synq-dim">ZERO CAPEX</span>
+              </div>
+
+              <h4 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+                Asset-Light by Architectural Design.
+              </h4>
+              <p className="text-sm text-synq-muted leading-relaxed max-w-xl">
+                We do not own IP, take production slate equity, or employ creative talent. Because we remain strictly non-adversarial, counterparties trust us with sensitive commercial and contractual bottlenecks.
+              </p>
+            </div>
+
+            {/* Apple Stat Matrix */}
+            <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/[0.06]">
+              <div>
+                <span className="text-2xl sm:text-3xl font-black text-white tracking-tight block">100%</span>
+                <span className="text-[11px] font-mono text-synq-dim uppercase">Neutral Posture</span>
+              </div>
+              <div>
+                <span className="text-2xl sm:text-3xl font-black text-accent-cyan tracking-tight block">72h</span>
+                <span className="text-[11px] font-mono text-synq-dim uppercase">Diagnosis SLA</span>
+              </div>
+              <div>
+                <span className="text-2xl sm:text-3xl font-black text-accent-lime tracking-tight block">0%</span>
+                <span className="text-[11px] font-mono text-synq-dim uppercase">Equity Drag</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

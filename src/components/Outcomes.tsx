@@ -1,70 +1,137 @@
 import React, { useState } from 'react';
 import { VALUE_PILLARS } from '../data/process';
-import { Gauge, Brain, ShieldCheck, Repeat, Expand, CheckCircle2 } from 'lucide-react';
+import { Gauge, Brain, ShieldCheck, Repeat, Expand, CheckCircle2, TrendingUp, Sparkles, Zap, ArrowUpRight } from 'lucide-react';
 
 export const Outcomes: React.FC = () => {
-  const [selectedPillar, setSelectedPillar] = useState<number>(0);
+  const [activeMetric, setActiveMetric] = useState<number>(0);
 
-  const icons = [Gauge, Brain, ShieldCheck, Repeat, Expand];
+  const bentoItems = [
+    {
+      id: 0,
+      title: 'VELOCITY',
+      tagline: '4x Production & Capital Flow',
+      metric: '72h vs. 90 Days',
+      metricLabel: 'Diagnostic-to-Bridge SLA',
+      icon: Gauge,
+      colSpan: 'lg:col-span-8',
+      desc: 'Compressing bilateral deal friction, diligence loops, and payment escrow from multi-month stalemates into active real-time transaction pipelines.',
+      highlight: true
+    },
+    {
+      id: 1,
+      title: 'INTELLIGENCE',
+      tagline: 'Compounding Institutional Data',
+      metric: '100+ Friction Vectors',
+      metricLabel: 'Continuously Indexed',
+      icon: Brain,
+      colSpan: 'lg:col-span-4',
+      desc: 'Every successful bridge feeds Inter-Node Intelligence™, ensuring recurring friction between similar stakeholders is resolved instantly.',
+      highlight: false
+    },
+    {
+      id: 2,
+      title: 'DE-RISKING',
+      tagline: 'Trust-Guaranteed Escrow',
+      metric: '0% Capital Exposure',
+      metricLabel: 'Milestone-Gated Releases',
+      icon: ShieldCheck,
+      colSpan: 'lg:col-span-4',
+      desc: 'Independent neutral governance eliminates default panic, creative piracy fears, and back-end waterfall manipulation.',
+      highlight: false
+    },
+    {
+      id: 3,
+      title: 'SYSTEMIZATION',
+      tagline: 'Repeatable Operational SOPs',
+      metric: '14 Standard Rails',
+      metricLabel: 'Automated Protocols',
+      icon: Repeat,
+      colSpan: 'lg:col-span-4',
+      desc: 'Converts isolated bilateral victories into standard industry contracts and repeatable workflow infrastructure.',
+      highlight: false
+    },
+    {
+      id: 4,
+      title: 'EXPANSION',
+      tagline: 'New Economic Corridors',
+      metric: '+₹15,000 Cr',
+      metricLabel: 'Unlocked Annual Velocity',
+      icon: Expand,
+      colSpan: 'lg:col-span-4',
+      desc: 'Connects Tier-1 domestic IPs with international streaming distributors, private credit, and gaming syndicates previously closed off by distrust.',
+      highlight: false
+    }
+  ];
 
   return (
-    <section className="relative py-24 md:py-32 bg-background border-t border-surface-border overflow-hidden">
+    <section className="relative py-28 md:py-36 bg-background border-t border-white/[0.06] overflow-hidden">
+      {/* Cupertino Glow Backdrop */}
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-accent-lime/[0.03] rounded-full blur-[160px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-100 border border-white/5 font-mono text-xs text-synq-dim uppercase tracking-wider mb-4">
-            14 / Tangible Outcomes
+        <div className="max-w-3xl mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-2 apple-pill px-3.5 py-1.5 font-mono text-[11px] text-accent-lime tracking-wider uppercase mb-5">
+            <TrendingUp className="w-3.5 h-3.5 text-accent-lime" />
+            <span>14 / Tangible Value Outcomes</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
             What changes when the space between nodes works?
           </h2>
+
           <p className="mt-5 text-base sm:text-lg text-synq-muted leading-relaxed">
-            When inter-node impedance is removed, stakeholders do not merely close one deal — they unlock unprecedented operational velocity and collective economic upside.
+            When inter-node impedance is removed, stakeholders do not merely close one deal — they unlock compounding velocity, shared margin, and collective economic upside.
           </p>
         </div>
 
-        {/* 5 Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {VALUE_PILLARS.map((pillar, idx) => {
-            const Icon = icons[idx] || Gauge;
-            const isSelected = selectedPillar === idx;
+        {/* Apple Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+          {bentoItems.map((item) => {
+            const Icon = item.icon;
+            const isSelected = activeMetric === item.id;
 
             return (
               <div
-                key={pillar.title}
-                onClick={() => setSelectedPillar(idx)}
-                className={`p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
-                  isSelected
-                    ? 'bg-surface-100 border-accent-cyan/60 shadow-xl shadow-accent-cyan/15 ring-1 ring-accent-cyan/30 scale-[1.02]'
-                    : 'bg-surface-100/30 border-white/5 hover:border-white/20 hover:bg-surface-100/60'
+                key={item.id}
+                onMouseEnter={() => setActiveMetric(item.id)}
+                className={`${item.colSpan} apple-bento-card p-8 sm:p-10 flex flex-col justify-between group cursor-pointer transition-all duration-500 relative overflow-hidden ${
+                  item.highlight ? 'bg-gradient-to-br from-surface-100/95 via-surface-100/70 to-background-deep border-accent-cyan/40' : ''
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                      isSelected ? 'bg-accent-cyan text-background-deep' : 'bg-surface-200 text-synq-muted'
-                    }`}>
-                      <Icon className="w-5 h-5" />
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-accent-cyan shadow-inner">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="font-mono text-xs text-synq-dim">0{idx + 1}</span>
+                    <span className="font-mono text-xs apple-pill px-3 py-1 text-synq-dim flex items-center gap-1">
+                      <span>OUTCOME 0{item.id + 1}</span>
+                      <ArrowUpRight className="w-3 h-3 text-accent-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </span>
                   </div>
 
-                  <h3 className={`text-xl font-bold tracking-tight mb-1 ${isSelected ? 'text-white' : 'text-synq-text'}`}>
-                    {pillar.title}
+                  <span className="font-mono text-xs uppercase tracking-wider text-accent-cyan font-semibold block mb-2">
+                    {item.title}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+                    {item.tagline}
                   </h3>
-
-                  <div className="text-xs font-mono text-accent-cyan mb-3">
-                    {pillar.metric}
-                  </div>
-
-                  <p className="text-xs text-synq-muted leading-relaxed">
-                    {pillar.desc}
+                  <p className="text-sm text-synq-muted leading-relaxed">
+                    {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-white/5 flex items-center gap-1.5 text-[11px] font-mono text-synq-dim">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-accent-lime" />
-                  <span>Ecosystem Metric</span>
+                {/* Telemetry Footprint */}
+                <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between">
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-black text-white tracking-tight block">
+                      {item.metric}
+                    </span>
+                    <span className="text-[11px] font-mono text-synq-dim uppercase">
+                      {item.metricLabel}
+                    </span>
+                  </div>
+                  <CheckCircle2 className="w-5 h-5 text-accent-lime opacity-80" />
                 </div>
               </div>
             );
