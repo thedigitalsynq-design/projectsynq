@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thedigitalsynq-design.github.io/projectsynq/sitemap.xml

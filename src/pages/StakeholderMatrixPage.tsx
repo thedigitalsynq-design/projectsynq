@@ -373,59 +373,77 @@ export const StakeholderMatrixPage: React.FC<StakeholderMatrixPageProps> = ({
 
             {/* Database Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {filteredDatabase.map((row) => (
-                <div
-                  key={row.id}
-                  className="p-6 rounded-2xl bg-surface-100/40 border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-surface-200 text-accent-cyan font-semibold">
-                        {row.stakeholder}
-                      </span>
-                      <span className="font-mono text-xs text-synq-dim">
-                        Spend: <strong className="text-white">{row.spendLevel}</strong>
-                      </span>
-                    </div>
-
-                    <h3 className="text-base font-bold text-white mb-1">
-                      {row.subStakeholder}
-                    </h3>
-
-                    <div className="space-y-3 mt-4 text-xs">
-                      <div>
-                        <span className="font-mono text-[10px] text-synq-dim uppercase tracking-wider block">Job To Be Done</span>
-                        <p className="text-synq-text leading-snug mt-0.5">{row.jobToBeDone}</p>
-                      </div>
-
-                      <div>
-                        <span className="font-mono text-[10px] text-rose-400 uppercase tracking-wider block">Core Problem & Friction</span>
-                        <p className="text-rose-200/90 leading-snug mt-0.5">{row.problem}</p>
-                      </div>
-
-                      <div className="pt-2 border-t border-white/5">
-                        <span className="font-mono text-[10px] text-synq-dim uppercase tracking-wider block">Current Workaround</span>
-                        <p className="text-synq-muted italic">{row.currentSolution}</p>
-                      </div>
-                    </div>
+              {filteredDatabase.length === 0 ? (
+                <div className="col-span-full p-12 text-center rounded-2xl bg-surface-100/30 border border-white/5 space-y-4">
+                  <div className="w-12 h-12 rounded-full bg-surface-200 border border-white/10 flex items-center justify-center mx-auto text-synq-muted">
+                    <Search className="w-6 h-6 text-accent-cyan" />
                   </div>
-
-                  <div className="pt-4 mt-4 border-t border-white/5 space-y-2">
-                    <div className="flex justify-between items-center text-[11px] font-mono">
-                      <span className="text-synq-dim">Revenue Model:</span>
-                      <span className="text-accent-cyan">{row.revenueModel}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-[11px] font-mono">
-                      <span className="text-synq-dim">Technology Vector:</span>
-                      <span className="text-white">{row.technology}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-[11px] font-mono">
-                      <span className="text-synq-dim">Whitespace Opportunity:</span>
-                      <span className="text-accent-lime font-bold">{row.whitespace}</span>
-                    </div>
-                  </div>
+                  <h3 className="text-lg font-bold text-white">No Friction Vectors Found</h3>
+                  <p className="text-xs text-synq-muted max-w-md mx-auto">
+                    No stakeholder problem entries match your query "{searchQuery}" in the selected filter. Try clearing your search or selecting "All" stakeholders.
+                  </p>
+                  <button
+                    onClick={() => { setSearchQuery(''); setDatabaseFilter('All'); }}
+                    className="px-4 py-2 rounded-lg bg-surface-200 hover:bg-surface-300 text-xs font-mono text-white border border-white/10 transition-colors"
+                  >
+                    Reset Search & Filters
+                  </button>
                 </div>
-              ))}
+              ) : (
+                filteredDatabase.map((row) => (
+                  <div
+                    key={row.id}
+                    className="p-6 rounded-2xl bg-surface-100/40 border border-white/5 hover:border-accent-cyan/30 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="font-mono text-xs px-2.5 py-0.5 rounded bg-surface-200 text-accent-cyan font-semibold">
+                          {row.stakeholder}
+                        </span>
+                        <span className="font-mono text-xs text-synq-dim">
+                          Spend: <strong className="text-white">{row.spendLevel}</strong>
+                        </span>
+                      </div>
+
+                      <h3 className="text-base font-bold text-white mb-1">
+                        {row.subStakeholder}
+                      </h3>
+
+                      <div className="space-y-3 mt-4 text-xs">
+                        <div>
+                          <span className="font-mono text-[10px] text-synq-dim uppercase tracking-wider block">Job To Be Done</span>
+                          <p className="text-synq-text leading-snug mt-0.5">{row.jobToBeDone}</p>
+                        </div>
+
+                        <div>
+                          <span className="font-mono text-[10px] text-rose-400 uppercase tracking-wider block">Core Problem & Friction</span>
+                          <p className="text-rose-200/90 leading-snug mt-0.5">{row.problem}</p>
+                        </div>
+
+                        <div className="pt-2 border-t border-white/5">
+                          <span className="font-mono text-[10px] text-synq-dim uppercase tracking-wider block">Current Workaround</span>
+                          <p className="text-synq-muted italic">{row.currentSolution}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 mt-4 border-t border-white/5 space-y-2">
+                      <div className="flex justify-between items-center text-[11px] font-mono">
+                        <span className="text-synq-dim">Revenue Model:</span>
+                        <span className="text-accent-cyan">{row.revenueModel}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-[11px] font-mono">
+                        <span className="text-synq-dim">Technology Vector:</span>
+                        <span className="text-white">{row.technology}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-[11px] font-mono">
+                        <span className="text-synq-dim">Whitespace Opportunity:</span>
+                        <span className="text-accent-lime font-bold">{row.whitespace}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         )}
